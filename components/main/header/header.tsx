@@ -15,7 +15,7 @@ export default function Header() {
   }
   const {headerLinks, setDrawerStatus} = useAppStore((state) => state)
   return (
-    <header className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header className="border-grid sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="app-container p-2 gap-2">
         <div className="flex gap-2">
           <div className="flex md:hidden">

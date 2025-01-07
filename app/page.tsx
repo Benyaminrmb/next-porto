@@ -27,10 +27,10 @@ export default async function Home() {
   return (
     <>
 
-      <HeroSection data={data} />
+      {/*<HeroSection data={data} />*/}
       <ProjectsSection projects={data.projects} />
-      <SkillsSection skills={data.skills} />
-      <ContactSection contact={data.contact} />
+      {/*<SkillsSection skills={data.skills} />*/}
+      {/*<ContactSection contact={data.contact} />*/}
       </>
   );
 }

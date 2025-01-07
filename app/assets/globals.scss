@@ -97,6 +97,12 @@ header {
     @apply app-container 2xl:border-r 2xl:border-l;
   }
 }
+footer {
+  @apply border-t;
+  > div {
+    @apply app-container 2xl:border-r 2xl:border-l;
+  }
+}
 .drawer-open {
   @apply rounded-lg overflow-hidden;
   transform: scale(0.96)
