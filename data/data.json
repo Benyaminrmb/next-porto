@@ -1,26 +1,86 @@
 {
-  "name": "John Doe",
-  "description": "A passionate web developer and designer.",
+  "name": "Benyamin",
+  "description": "A passionate web developer with experience in building social platforms and tourism-related services.",
   "projects": [
     {
       "id": 1,
-      "title": "Project 1",
-      "description": "A web app for managing tasks.",
-      "image": "/images/project1.jpg",
-      "link": "https://project1.com"
+      "title": "Eventoment",
+      "description": "A comprehensive platform for organizing and managing events and activities. Users can create, manage, and share events, as well as participate in others' events.",
+      "image": "/images/eventoment.jpg",
+      "link": "https://eventoment.com"
     },
     {
       "id": 2,
-      "title": "Project 2",
-      "description": "A portfolio website built with Next.js.",
-      "image": "/images/project2.jpg",
-      "link": "https://project2.com"
+      "title": "Tourism Reservation System",
+      "description": "Developed a reservation system for tours and leisure activities, including a bus ticket booking service.",
+      "image": "/images/tourism.jpg",
+      "link": "#"
     }
   ],
-  "skills": ["JavaScript", "React", "Next.js", "CSS"],
+  "skills": [
+    "JavaScript",
+    "Vue.js",
+    "Nuxt.js",
+    "Laravel",
+    "REST API",
+    "Database Design",
+    "Webpack",
+    "SEO",
+    "PWA Development"
+  ],
   "contact": {
-    "email": "john.doe@example.com",
-    "github": "https://github.com/johndoe",
-    "linkedin": "https://linkedin.com/in/johndoe"
-  }
+    "email": "benyamhrmb@gmail.com",
+    "phone": "+98 910 845 3606",
+    "github": "https://github.com/benyamhrmb",
+    "linkedin": "https://linkedin.com/in/benyamhrmb"
+  },
+  "languages": [
+    {
+      "name": "English",
+      "level": "C1",
+      "details": {
+        "reading": "C2",
+        "writing": "C1",
+        "speaking": "C2",
+        "listening": "C2"
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": "Diploma in Mathematics",
+      "institution": "Public School",
+      "location": "Tehran, Parand",
+      "duration": "2018 - 2019",
+      "gpa": "17"
+    }
+  ],
+  "workExperience": [
+    {
+      "title": "Team Leader",
+      "company": "Iran Technology Company",
+      "location": "Tehran",
+      "duration": "March 2012 - Present",
+      "responsibilities": [
+        "Led the development of Eventoment, a social platform for event management.",
+        "Implemented technologies such as Vue.js, Nuxt.js, Laravel, and REST API.",
+        "Designed and developed an event management system allowing users to create, edit, and manage events.",
+        "Used Firebase for push notifications and applied design patterns for efficient development.",
+        "Designed and implemented the database structure for the project."
+      ]
+    },
+    {
+      "title": "Developer",
+      "company": "Iran Technology Company",
+      "location": "Tehran",
+      "duration": "March 2012 - October 2019",
+      "responsibilities": [
+        "Developed Progressive Web Applications (PWA).",
+        "Optimized websites for SEO.",
+        "Used Webpack for module bundling.",
+        "Created a bus ticket reservation web service.",
+        "Developed a tourism and leisure reservation system."
+      ]
+    }
+  ]
 }

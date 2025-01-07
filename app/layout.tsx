@@ -6,6 +6,7 @@ import Header from '@/components/main/header/header'
 import React from 'react'
 import {ThemeProvider} from '@/components/option/theme-provider'
 import {useAppStore} from '@/store/app'
+import {Footer} from '@/components/main/footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,6 +42,7 @@ export default function RootLayout({
             className={`w-full flex flex-col gap-0 relative ${isDrawerOpen ? 'drawer-open' : ''}`}>
             <Header />
             <div className="flex w-full flex-col app-main">{children}</div>
+            <Footer />
           </main>
         </ThemeProvider>
       </body>
