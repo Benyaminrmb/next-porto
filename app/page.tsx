@@ -2,12 +2,10 @@ import Image from 'next/image';
 import Head from 'next/head';
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
-import {Test} from '@/components/test'
- import {AuroraBackground} from '@/components/ui/aurora-background'
-import {  HeroSection} from '@/components/bg-effect'
-import {ProjectsSection} from '@/components/projects-section'
-import {SkillsSection} from '@/components/skills-section'
-import {ContactSection} from '@/components/contact-section'
+
+import BCard from '@/components/main/b-card'
+import TextEffect from '@/components/text-effect'
+import {WavyBackgroundDemo} from '@/components/WavyBackgroundDemo'
 // Function to fetch data
 
 
@@ -26,9 +24,11 @@ export default async function Home() {
 
   return (
     <>
-
+      <BCard>
+        <WavyBackgroundDemo/>
+      </BCard>
       {/*<HeroSection data={data} />*/}
-      <ProjectsSection projects={data.projects} />
+      {/*<ProjectsSection projects={data.projects} />*/}
       {/*<SkillsSection skills={data.skills} />*/}
       {/*<ContactSection contact={data.contact} />*/}
       </>

@@ -37,7 +37,7 @@ export default function Header() {
             <Link
               key={index}
               className={buttonVariants({
-                variant: isActive(link.url) ? 'default' : 'ghost',
+                variant: isActive(link.url) ? 'secondary' : 'ghost',
                 size: 'sm',
               })}
               href={link.url}>
