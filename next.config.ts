@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
         port: '',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com',
+
+      },
     ],
   },
 };

@@ -1,7 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-
-// Define the structure of your data (optional but recommended for TypeScript)
+// data.ts
 export interface PortfolioData {
   name: string;
   description: string;
@@ -20,9 +17,33 @@ export interface PortfolioData {
   };
 }
 
-// Reusable function to fetch data
+// Simulate fetching data (replace this with actual fetching logic)
 export async function getData(): Promise<PortfolioData> {
-  const filePath = path.join(process.cwd(), 'data', 'data.json');
-  const jsonData = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(jsonData);
+  // In a real app, you might fetch this from an API or database
+  return {
+    name: "John Doe",
+    description: "A passionate web developer and designer.",
+    projects: [
+      {
+        id: 1,
+        title: "Project 1",
+        description: "A web app for managing tasks.",
+        image: "/images/project1.jpg",
+        link: "https://project1.com",
+      },
+      {
+        id: 2,
+        title: "Project 2",
+        description: "A portfolio website built with Next.js.",
+        image: "/images/project2.jpg",
+        link: "https://project2.com",
+      },
+    ],
+    skills: ["JavaScript", "React", "Next.js", "CSS"],
+    contact: {
+      email: "john.doe@example.com",
+      github: "https://github.com/johndoe",
+      linkedin: "https://linkedin.com/in/johndoe",
+    },
+  };
 }
