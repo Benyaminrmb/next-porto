@@ -71,6 +71,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+@layer utilities {
   .app-container {
     @apply mx-auto flex max-w-[85rem] w-full items-center justify-between p-4;
   }
@@ -85,7 +87,7 @@ main {
 .app-main {
   section {
     > div {
-      @apply app-container 2xl:border-r 2xl:border-l;
+      @apply app-container 2xl:border-r 2xl:border-l flex flex-col;
     }
     @apply border-b;
   }

@@ -1,11 +1,26 @@
 {
-  "name": "Benyamin",
-  "description": "A passionate web developer with experience in building social platforms and tourism-related services.",
+  "name": "Benyamin Bolhassani",
+  "description": "Experienced Laravel developer specializing in PHP, Laravel, Nuxt.js, Next.js, and React. Creator of Eventoment, a comprehensive event management platform.",
+  "skills": [
+    "PHP",
+    "Laravel",
+    "Nuxt.js",
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Vue.js",
+    "REST API",
+    "Database Design",
+    "Webpack",
+    "SEO",
+    "PWA Development",
+    "Package Development (e.g., laravel-dynamic-resources)"
+  ],
   "projects": [
     {
       "id": 1,
       "title": "Eventoment",
-      "description": "A comprehensive platform for organizing and managing events and activities. Users can create, manage, and share events, as well as participate in others' events.",
+      "description": "A comprehensive platform for organizing and managing events and activities. Built with Laravel, Vue.js, and Nuxt.js.",
       "image": "/images/eventoment.jpg",
       "link": "https://eventoment.com"
     },
@@ -16,17 +31,6 @@
       "image": "/images/tourism.jpg",
       "link": "#"
     }
-  ],
-  "skills": [
-    "JavaScript",
-    "Vue.js",
-    "Nuxt.js",
-    "Laravel",
-    "REST API",
-    "Database Design",
-    "Webpack",
-    "SEO",
-    "PWA Development"
   ],
   "contact": {
     "email": "benyamhrmb@gmail.com",
@@ -62,11 +66,10 @@
       "location": "Tehran",
       "duration": "March 2012 - Present",
       "responsibilities": [
-        "Led the development of Eventoment, a social platform for event management.",
-        "Implemented technologies such as Vue.js, Nuxt.js, Laravel, and REST API.",
-        "Designed and developed an event management system allowing users to create, edit, and manage events.",
-        "Used Firebase for push notifications and applied design patterns for efficient development.",
-        "Designed and implemented the database structure for the project."
+        "Led the development of Eventoment, a social platform for event management using Laravel, Vue.js, and Nuxt.js.",
+        "Developed custom Laravel packages, including laravel-dynamic-resources, to simplify CRUD operations in Laravel applications.",
+        "Implemented REST APIs and designed database structures for scalable web applications.",
+        "Mentored junior developers and conducted code reviews to ensure high-quality deliverables."
       ]
     },
     {
@@ -75,11 +78,10 @@
       "location": "Tehran",
       "duration": "March 2012 - October 2019",
       "responsibilities": [
-        "Developed Progressive Web Applications (PWA).",
-        "Optimized websites for SEO.",
-        "Used Webpack for module bundling.",
-        "Created a bus ticket reservation web service.",
-        "Developed a tourism and leisure reservation system."
+        "Developed Progressive Web Applications (PWA) using Laravel and Vue.js.",
+        "Optimized websites for SEO and performance.",
+        "Created a bus ticket reservation web service and a tourism reservation system.",
+        "Collaborated with cross-functional teams to deliver projects on time."
       ]
     }
   ]

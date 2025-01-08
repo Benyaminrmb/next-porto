@@ -6,7 +6,7 @@ import Header from '@/components/main/header/header'
 import React from 'react'
 import {ThemeProvider} from '@/components/option/theme-provider'
 import {useAppStore} from '@/store/app'
-import {Footer} from '@/components/main/footer/footer'
+import Footer from '@/components/main/footer/footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
