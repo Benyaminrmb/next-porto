@@ -3,7 +3,7 @@ import {create} from 'zustand'
 // State types
 interface States {
   isDrawerOpen: boolean
-  headerLinks: [HeaderLink]
+  headerLinks: HeaderLink[]
 }
 interface HeaderLink {
   title: string
@@ -18,7 +18,23 @@ export const useAppStore = create<States & Actions>((set) => ({
   headerLinks: [
     {
       title: 'About',
-      url: '/about',
+      url: '/#about',
+    },
+    {
+      title: 'Projects',
+      url: '/#projects',
+    },
+    {
+      title: 'Skills',
+      url: '/#skills',
+    },
+    {
+      title: 'Experience',
+      url: '/#experience',
+    },
+    {
+      title: 'Contact',
+      url: '/#contact',
     },
   ],
   setDrawerStatus: (status) =>
