@@ -1,88 +1,136 @@
 {
   "name": "Benyamin Bolhassani",
-  "description": "Experienced Laravel developer specializing in PHP, Laravel, Nuxt.js, Next.js, and React. Creator of Eventoment, a comprehensive event management platform.",
+  "title": "Senior PHP Developer",
+  "description": "Full-Stack Developer with 6+ years of experience in PHP/Laravel and Nuxt.js. Expert in building scalable platforms, API design, and leading technical teams. Strong background in SEO, PWA, Filament, and software architecture.",
+  "birthDate": "1379/4/9",
+  "location": "Tehran, Iran",
+  "maritalStatus": "Single",
   "skills": [
     "PHP",
     "Laravel",
+    "Filament",
+    "Livewire",
     "Nuxt.js",
     "Next.js",
     "React",
-    "JavaScript",
     "Vue.js",
+    "JavaScript",
     "REST API",
     "Database Design",
-    "Webpack",
+    "Git & GitHub",
+    "CI/CD",
+    "Scrum",
+    "Project Management",
     "SEO",
     "PWA Development",
-    "Package Development (e.g., laravel-dynamic-resources)"
+    "Multilingual (EN/FA) Websites"
   ],
   "projects": [
     {
       "id": 1,
       "title": "Eventoment",
-      "description": "A comprehensive platform for organizing and managing events and activities. Built with Laravel, Vue.js, and Nuxt.js.",
-      "image": "/images/eventoment.jpg",
-      "link": "https://eventoment.com"
+      "description": "Social platform for event management with Laravel, Nuxt.js, and REST API. Includes event management system and Firebase notifications.",
+      "image": "https://eventoment.com/_nuxt/img/splash.f4b7423.png",
+      "link": "https://eventoment.com",
+      "tags": ["Laravel", "Nuxt.js", "REST API", "Firebase"]
     },
     {
       "id": 2,
-      "title": "Tourism Reservation System",
-      "description": "Developed a reservation system for tours and leisure activities, including a bus ticket booking service.",
-      "image": "/images/tourism.jpg",
-      "link": "#"
+      "title": "Safar360",
+      "description": "Tourism website for booking flights, trains, hotels, and tours. Complete reservation system for travel services.",
+      "image": "/images/safar360.jpg",
+      "link": "https://safar360.com",
+      "tags": ["Laravel", "Vue.js", "Payment Gateway"]
+    },
+    {
+      "id": 3,
+      "title": "Steel Rizan Automation",
+      "description": "Company automation system for steel casting factory with Laravel/Filament, including database design, custom modules, and process optimization.",
+      "image": "/images/steelrizan.jpg",
+      "link": "https://faraz.steelrizan.com",
+      "tags": ["Laravel", "Filament", "Automation"]
     }
   ],
   "contact": {
-    "email": "benyamhrmb@gmail.com",
-    "phone": "+98 910 845 3606",
-    "github": "https://github.com/benyamhrmb",
-    "linkedin": "https://linkedin.com/in/benyamhrmb"
+    "email": "benyaminrmb@gmail.com",
+    "phone": "(+98) 910 845 3606",
+    "website": "https://benyaminrmb.ir",
+    "github": "https://github.com/benyaminrmb",
+    "linkedin": "https://linkedin.com/in/benyaminrmb"
   },
   "languages": [
     {
+      "name": "Persian (Farsi)",
+      "level": "Native",
+      "flag": "🇮🇷"
+    },
+    {
       "name": "English",
-      "level": "C1",
+      "level": "C2",
+      "score": "87",
       "details": {
         "reading": "C2",
         "writing": "C1",
         "speaking": "C2",
         "listening": "C2"
-      }
+      },
+      "flag": "🇬🇧"
     }
   ],
   "education": [
     {
       "degree": "Diploma in Mathematics",
-      "institution": "Public School",
+      "institution": "Hafez Public School",
       "location": "Tehran, Parand",
       "duration": "2018 - 2019",
-      "gpa": "17"
+      "gpa": "17/20"
     }
   ],
   "workExperience": [
     {
+      "title": "Designer & Developer",
+      "company": "Webnegah Company",
+      "location": "Tehran",
+      "duration": "Feb 2024 - Present",
+      "current": true,
+      "responsibilities": [
+        "Designed and implemented automation website for steel casting company using Laravel/Filament",
+        "Created custom modules and optimized production and administrative processes",
+        "Maintained multiple Filament-based websites with advanced features",
+        "Developed multilingual (EN/FA) websites with modern architecture"
+      ]
+    },
+    {
       "title": "Team Leader",
       "company": "Iran Technology Company",
       "location": "Tehran",
-      "duration": "March 2012 - Present",
+      "duration": "Apr 2022 - Aug 2024",
       "responsibilities": [
-        "Led the development of Eventoment, a social platform for event management using Laravel, Vue.js, and Nuxt.js.",
-        "Developed custom Laravel packages, including laravel-dynamic-resources, to simplify CRUD operations in Laravel applications.",
-        "Implemented REST APIs and designed database structures for scalable web applications.",
-        "Mentored junior developers and conducted code reviews to ensure high-quality deliverables."
+        "Led the development of Eventoment social platform using Laravel, Nuxt.js, and REST API",
+        "Designed and implemented event management system with Firebase notifications",
+        "Developed custom Laravel packages including laravel-dynamic-resources for CRUD operations",
+        "Implemented REST APIs and designed scalable database structures",
+        "Mentored junior developers and conducted code reviews"
       ]
     },
     {
       "title": "Developer",
       "company": "Iran Technology Company",
       "location": "Tehran",
-      "duration": "March 2012 - October 2019",
+      "duration": "Oct 2019 - Apr 2022",
       "responsibilities": [
-        "Developed Progressive Web Applications (PWA) using Laravel and Vue.js.",
-        "Optimized websites for SEO and performance.",
-        "Created a bus ticket reservation web service and a tourism reservation system.",
-        "Collaborated with cross-functional teams to deliver projects on time."
+        "Developed Progressive Web Applications (PWA) using Laravel and Vue.js",
+        "Optimized websites for SEO and performance",
+        "Created tourism reservation system for flights, trains, hotels and tours",
+        "Implemented bus ticket booking service",
+        "Collaborated with cross-functional teams to deliver projects on time"
       ]
     }
-  ]
+  ],
+  "stats": {
+    "yearsOfExperience": "6+",
+    "projectsCompleted": "15+",
+    "clientsSatisfied": "10+",
+    "linesOfCode": "100K+"
+  }
 }

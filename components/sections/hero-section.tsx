@@ -7,10 +7,11 @@ import { ArrowDown } from "lucide-react";
 
 interface HeroSectionProps {
   name: string;
+  title?: string;
   description: string;
 }
 
-export function HeroSection({ name, description }: HeroSectionProps) {
+export function HeroSection({ name, title, description }: HeroSectionProps) {
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     aboutSection?.scrollIntoView({ behavior: "smooth" });
@@ -43,6 +44,20 @@ export function HeroSection({ name, description }: HeroSectionProps) {
             {name}
           </span>
         </motion.div>
+
+        {title && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.8,
+              duration: 0.6,
+            }}
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-neutral-600 dark:text-neutral-400 text-center"
+          >
+            {title}
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

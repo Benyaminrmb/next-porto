@@ -11,6 +11,7 @@ interface Project {
   description: string;
   image: string;
   link: string;
+  tags?: string[];
 }
 
 interface ProjectsShowcaseProps {
@@ -80,6 +81,20 @@ export function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
                       )}
                     </div>
                   </CardItem>
+                  {project.tags && project.tags.length > 0 && (
+                    <CardItem translateZ="50" className="mt-4">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-3 py-1 text-xs font-medium bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full border border-blue-500/20"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </CardItem>
+                  )}
                   <div className="flex justify-between items-center mt-6">
                     <CardItem
                       translateZ={20}
