@@ -32,7 +32,8 @@
       "description": "Social platform for event management with Laravel, Nuxt.js, and REST API. Includes event management system and Firebase notifications.",
       "image": "https://eventoment.com/_nuxt/img/splash.f4b7423.png",
       "link": "https://eventoment.com",
-      "tags": ["Laravel", "Nuxt.js", "REST API", "Firebase"]
+      "tags": ["Laravel", "Nuxt.js", "REST API", "Firebase"],
+      "category": "web"
     },
     {
       "id": 2,
@@ -40,7 +41,8 @@
       "description": "Tourism website for booking flights, trains, hotels, and tours. Complete reservation system for travel services.",
       "image": "/images/safar360.jpg",
       "link": "https://safar360.com",
-      "tags": ["Laravel", "Vue.js", "Payment Gateway"]
+      "tags": ["Laravel", "Vue.js", "Payment Gateway"],
+      "category": "web"
     },
     {
       "id": 3,
@@ -48,12 +50,14 @@
       "description": "Company automation system for steel casting factory with Laravel/Filament, including database design, custom modules, and process optimization.",
       "image": "/images/steelrizan.jpg",
       "link": "https://faraz.steelrizan.com",
-      "tags": ["Laravel", "Filament", "Automation"]
+      "tags": ["Laravel", "Filament", "Automation"],
+      "category": "web"
     }
   ],
   "contact": {
     "email": "benyaminrmb@gmail.com",
     "phone": "(+98) 910 845 3606",
+    "location": "Tehran, Iran",
     "website": "https://benyaminrmb.ir",
     "github": "https://github.com/benyaminrmb",
     "linkedin": "https://linkedin.com/in/benyaminrmb"
@@ -79,52 +83,62 @@
   ],
   "education": [
     {
-      "degree": "Diploma in Mathematics",
-      "institution": "Hafez Public School",
+      "id": 4,
+      "title": "Diploma in Mathematics",
+      "company": "Hafez Public School",
       "location": "Tehran, Parand",
-      "duration": "2018 - 2019",
-      "gpa": "17/20"
+      "period": "2018 - 2019",
+      "description": [
+        "Completed high school diploma with focus on mathematics",
+        "Achieved GPA of 17/20",
+        "Developed strong analytical and problem-solving skills"
+      ]
     }
   ],
   "workExperience": [
     {
+      "id": 1,
       "title": "Designer & Developer",
       "company": "Webnegah Company",
       "location": "Tehran",
-      "duration": "Feb 2024 - Present",
-      "current": true,
-      "responsibilities": [
+      "period": "Feb 2024 - Present",
+      "description": [
         "Designed and implemented automation website for steel casting company using Laravel/Filament",
         "Created custom modules and optimized production and administrative processes",
         "Maintained multiple Filament-based websites with advanced features",
         "Developed multilingual (EN/FA) websites with modern architecture"
-      ]
+      ],
+      "technologies": ["Laravel", "Filament", "Livewire", "PHP", "MySQL", "Tailwind CSS"]
     },
     {
+      "id": 2,
       "title": "Team Leader",
       "company": "Iran Technology Company",
       "location": "Tehran",
-      "duration": "Apr 2022 - Aug 2024",
-      "responsibilities": [
+      "period": "Apr 2022 - Aug 2024",
+      "description": [
         "Led the development of Eventoment social platform using Laravel, Nuxt.js, and REST API",
         "Designed and implemented event management system with Firebase notifications",
         "Developed custom Laravel packages including laravel-dynamic-resources for CRUD operations",
         "Implemented REST APIs and designed scalable database structures",
         "Mentored junior developers and conducted code reviews"
-      ]
+      ],
+      "technologies": ["Laravel", "Nuxt.js", "REST API", "Firebase", "Vue.js", "MySQL", "Redis"]
     },
     {
+      "id": 3,
       "title": "Developer",
       "company": "Iran Technology Company",
       "location": "Tehran",
-      "duration": "Oct 2019 - Apr 2022",
-      "responsibilities": [
+      "period": "Oct 2019 - Apr 2022",
+      "description": [
         "Developed Progressive Web Applications (PWA) using Laravel and Vue.js",
         "Optimized websites for SEO and performance",
         "Created tourism reservation system for flights, trains, hotels and tours",
         "Implemented bus ticket booking service",
         "Collaborated with cross-functional teams to deliver projects on time"
-      ]
+      ],
+      "technologies": ["Laravel", "Vue.js", "PWA", "SEO", "Payment Gateway", "MySQL"]
     }
   ],
   "stats": {

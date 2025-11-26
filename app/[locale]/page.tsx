@@ -1,14 +1,11 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
 
-import { HeroSection } from '@/components/sections/hero-section-enhanced';
-import { AboutSection } from '@/components/sections/about-section';
-import { StatsShowcase } from '@/components/sections/stats-showcase';
-import { ProjectsShowcase } from '@/components/sections/projects-showcase';
-import { TechStack } from '@/components/sections/tech-stack';
-import { ExperienceTimeline } from '@/components/sections/experience-timeline';
-import { LanguageShowcase } from '@/components/sections/language-showcase';
-import { ContactShowcase } from '@/components/sections/contact-showcase';
+import { HeroMotion } from '@/components/sections/hero-motion';
+import { AboutMotion } from '@/components/sections/about-motion';
+import { ProjectsMotion } from '@/components/sections/projects-motion';
+import { ExperienceMotion } from '@/components/sections/experience-motion';
+import { ContactMotion } from '@/components/sections/contact-motion';
 import { BackToTop } from '@/components/ui/back-to-top';
 import { CustomCursor } from '@/components/ui/custom-cursor';
 
@@ -24,21 +21,38 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const data = await getData();
 
+  // Prepare highlights for About section
+  const highlights = [
+    "6+ years of experience building web applications",
+    "Specialized in Laravel, PHP, and modern JavaScript frameworks",
+    "Strong focus on clean architecture and maintainable code",
+    "Experience leading teams and mentoring junior developers"
+  ];
+
+  // Combine work experience and education for timeline
+  const allExperiences = [
+    ...(data.workExperience || []),
+    ...(data.education || [])
+  ];
+
   return (
     <>
       <CustomCursor />
       <main className="scroll-smooth">
-        <HeroSection name={data.name} title={data.title} description={data.description} />
-        <AboutSection name={data.name} description={data.description} />
-        {data.stats && <StatsShowcase stats={data.stats} />}
-        <ProjectsShowcase projects={data.projects} />
-        <TechStack />
-        <ExperienceTimeline
-          workExperience={data.workExperience}
-          education={data.education}
+        <HeroMotion name={data.name} title={data.title} description={data.description} />
+        <AboutMotion name={data.name} description={data.description} highlights={highlights} />
+        <ProjectsMotion projects={data.projects} />
+        <ExperienceMotion experiences={allExperiences} />
+        <ContactMotion
+          email={data.contact.email}
+          phone={data.contact.phone}
+          location={data.contact.location}
+          social={{
+            github: "https://github.com/benyaminrmb",
+            linkedin: "https://linkedin.com/in/benyaminrmb",
+            twitter: "https://twitter.com/benyaminrmb"
+          }}
         />
-        <LanguageShowcase languages={data.languages} />
-        <ContactShowcase contact={data.contact} />
       </main>
       <BackToTop />
     </>
