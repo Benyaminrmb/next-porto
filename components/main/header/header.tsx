@@ -6,6 +6,7 @@ import {usePathname} from 'next/navigation'
 import {ModeToggle} from '@/components/main/mode-toggle'
 import HeaderItems from '@/components/main/header/items'
 import {useAppStore} from '@/store/app'
+import {LanguageSwitcher} from '@/components/ui/language-switcher'
 
 export default function Header() {
   const pathname = usePathname()
@@ -48,6 +49,7 @@ export default function Header() {
 
         {/* Social Links */}
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
           <Button variant="outline" size="icon" asChild>
             <a
               href="https://github.com/benyaminrmb"

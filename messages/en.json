@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch",
+    "downloadCV": "Download CV",
+    "scrollDown": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "role": "Full-Stack Developer",
+    "availableForHire": "Available for hire",
+    "highlights": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Writing maintainable and scalable code"
+      },
+      "fastPerformance": {
+        "title": "Fast Performance",
+        "description": "Optimized for speed and efficiency"
+      },
+      "userCentric": {
+        "title": "User-Centric",
+        "description": "Focused on great user experiences"
+      },
+      "alwaysLearning": {
+        "title": "Always Learning",
+        "description": "Staying updated with latest tech"
+      }
+    }
+  },
+  "stats": {
+    "title": "Achievements",
+    "yearsExperience": "Years Experience",
+    "projectsCompleted": "Projects Completed",
+    "happyClients": "Happy Clients",
+    "linesOfCode": "Lines of Code"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Here are some of my recent works that showcase my skills and passion for development",
+    "visitProject": "Visit Project",
+    "learnMore": "Learn More"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "subtitle": "Technologies and tools I use to build amazing web applications"
+  },
+  "experience": {
+    "title": "Experience & Education",
+    "workExperience": "Work Experience",
+    "education": "Education"
+  },
+  "languages": {
+    "title": "Languages",
+    "proficiency": "Proficiency"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision",
+    "readyToStart": "Ready to Start a Project?",
+    "description": "I'm available for freelance work, consulting, and full-time opportunities. Let's create something amazing together!",
+    "sendEmail": "Send Me an Email",
+    "viewGitHub": "View GitHub Profile",
+    "currentlyAvailable": "Currently available for new opportunities"
+  }
+}
