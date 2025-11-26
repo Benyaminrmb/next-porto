@@ -3,11 +3,18 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextMorph } from "@/components/ui/text-morph";
+import { FallingStars } from "@/components/ui/falling-stars";
 import { FloatingParticles } from "@/components/ui/floating-particles";
 import { MagneticButton } from "@/components/ui/magnetic-button";
-import { ArrowDown, Download, Mail, Github, Linkedin } from "lucide-react";
+import { Download, Mail, Github, Linkedin, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface HeroMotionProps {
   name: string;
@@ -20,6 +27,9 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const morphTextRef = useRef<HTMLDivElement>(null);
+  const orb1Ref = useRef<HTMLDivElement>(null);
+  const orb2Ref = useRef<HTMLDivElement>(null);
+  const orb3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -28,9 +38,47 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
       // Entrance animation timeline
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
+      // Animate gradient orbs entrance
+      gsap.from([orb1Ref.current, orb2Ref.current, orb3Ref.current], {
+        scale: 0,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+      });
+
+      // Continuous floating animation for orbs
+      gsap.to(orb1Ref.current, {
+        y: -30,
+        x: 20,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(orb2Ref.current, {
+        y: 40,
+        x: -30,
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(orb3Ref.current, {
+        y: -20,
+        x: 15,
+        duration: 3.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
       tl.from(titleRef.current, {
         scale: 0.5,
         opacity: 0,
+        rotationX: -90,
         duration: 1.2,
         ease: "back.out(1.7)",
       })
@@ -57,8 +105,8 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
           {
             scale: 0,
             opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
+            stagger: 0.15,
+            duration: 0.6,
             ease: "back.out(2)",
           },
           "-=0.3"
@@ -68,13 +116,14 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
           {
             x: -30,
             opacity: 0,
+            rotation: -180,
             stagger: 0.1,
-            duration: 0.5,
+            duration: 0.6,
           },
           "-=0.5"
         );
 
-      // Parallax on scroll
+      // Enhanced parallax on scroll with ScrollTrigger
       gsap.to(containerRef.current, {
         scrollTrigger: {
           trigger: containerRef.current,
@@ -82,8 +131,22 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
           end: "bottom top",
           scrub: 1,
         },
-        y: -100,
-        opacity: 0.8,
+        y: -150,
+        opacity: 0.5,
+        scale: 0.95,
+      });
+
+      // Parallax for orbs
+      gsap.to([orb1Ref.current, orb2Ref.current, orb3Ref.current], {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+        y: 200,
+        opacity: 0,
+        stagger: 0.1,
       });
     }, containerRef);
 
@@ -95,6 +158,7 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
     "Laravel Expert",
     "Full Stack Developer",
     "API Architect",
+    "Creative Coder",
   ];
 
   const scrollToProjects = () => {
@@ -103,71 +167,97 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-neutral-50 via-purple-50/30 to-neutral-50 dark:from-neutral-950 dark:via-purple-950/20 dark:to-neutral-950">
-      {/* Floating Particles Background */}
-      <FloatingParticles count={40} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
+      {/* Falling Stars Background */}
+      <FallingStars count={25} speed="medium" />
 
-      {/* Gradient Orbs */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse delay-700" />
+      {/* Floating Particles Background */}
+      <FloatingParticles count={30} />
+
+      {/* Animated Gradient Orbs with new color system */}
+      <div
+        ref={orb1Ref}
+        className="absolute top-1/4 -left-48 w-96 h-96 rounded-full blur-3xl opacity-70"
+        style={{
+          background: "radial-gradient(circle, hsl(var(--gradient-start)) 0%, transparent 70%)"
+        }}
+      />
+      <div
+        ref={orb2Ref}
+        className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full blur-3xl opacity-70"
+        style={{
+          background: "radial-gradient(circle, hsl(var(--gradient-end)) 0%, transparent 70%)"
+        }}
+      />
+      <div
+        ref={orb3Ref}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl opacity-30"
+        style={{
+          background: "radial-gradient(circle, hsl(var(--gradient-mid)) 0%, transparent 70%)"
+        }}
+      />
 
       <div ref={containerRef} className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <div className="flex flex-col items-center text-center gap-8">
-          {/* Greeting Text */}
+          {/* Greeting Text with icon */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 font-light"
+            className="flex items-center gap-2 text-lg md:text-xl text-muted-foreground font-light"
           >
+            <Sparkles className="w-5 h-5 text-primary" />
             {t("greeting")}
           </motion.div>
 
-          {/* Name with Gradient */}
+          {/* Name with Enhanced Gradient */}
           <div ref={titleRef} className="relative">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-              <span className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
+              <span className="inline-block gradient-text animate-gradient">
                 {name}
               </span>
             </h1>
 
-            {/* Underline Animation */}
+            {/* Animated Underline with gradient */}
             <motion.div
-              className="absolute -bottom-4 left-1/2 h-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full"
+              className="absolute -bottom-4 left-1/2 h-1.5 rounded-full"
+              style={{
+                background: "linear-gradient(to right, hsl(var(--gradient-start)), hsl(var(--gradient-end)))"
+              }}
               initial={{ width: 0, x: "-50%" }}
               animate={{ width: "100%", x: "-50%" }}
               transition={{ duration: 1, delay: 1 }}
             />
           </div>
 
-          {/* Morphing Role Text */}
+          {/* Morphing Role Text with new colors */}
           <div ref={morphTextRef} className="text-2xl md:text-4xl lg:text-5xl font-semibold min-h-[60px] flex items-center">
             <TextMorph
               texts={roles}
-              className="bg-gradient-to-r from-neutral-700 via-neutral-900 to-neutral-700 dark:from-neutral-200 dark:via-neutral-100 dark:to-neutral-200 bg-clip-text text-transparent"
+              className="gradient-text"
               duration={2500}
             />
           </div>
 
           {/* Description */}
           <motion.p
-            className="hero-description max-w-2xl text-lg md:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed"
+            className="hero-description max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed"
           >
             {description}
           </motion.p>
 
-          {/* Action Buttons */}
+          {/* Action Buttons with new color system */}
           <div className="hero-buttons flex flex-wrap gap-4 mt-4 justify-center">
             <MagneticButton>
               <motion.a
                 href="#projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-medium shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 overflow-hidden"
+                className="group relative px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium shadow-xl hover:shadow-2xl glow-purple transition-all duration-300 flex items-center gap-2 overflow-hidden"
               >
                 <span className="relative z-10">{t("viewWork")}</span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700"
+                  className="absolute inset-0 bg-accent"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -180,7 +270,7 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-neutral-700 dark:border-neutral-300 text-neutral-700 dark:text-neutral-300 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 flex items-center gap-2"
+                className="px-8 py-4 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center gap-2"
               >
                 <Mail className="w-5 h-5" />
                 <span>{t("contact")}</span>
@@ -193,7 +283,7 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-medium shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[hsl(var(--success))] to-emerald-500 text-white rounded-full font-medium shadow-xl hover:shadow-2xl glow-cyan transition-all duration-300 flex items-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 <span>{t("downloadCV")}</span>
@@ -201,7 +291,7 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
             </MagneticButton>
           </div>
 
-          {/* Social Links */}
+          {/* Social Links with enhanced hover effects */}
           <div className="hero-social flex gap-6 mt-8">
             <motion.a
               href="https://github.com/benyaminrmb"
@@ -209,7 +299,7 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-purple-600 hover:text-white transition-colors duration-300"
+              className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 glow-purple"
             >
               <Github className="w-6 h-6" />
             </motion.a>
@@ -220,13 +310,13 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-blue-600 hover:text-white transition-colors duration-300"
+              className="p-3 rounded-full bg-secondary hover:bg-accent hover:text-accent-foreground transition-all duration-300 glow-blue"
             >
               <Linkedin className="w-6 h-6" />
             </motion.a>
           </div>
 
-          {/* Scroll Indicator */}
+          {/* Enhanced Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -243,10 +333,10 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
               }}
               className="flex flex-col items-center gap-2"
             >
-              <span className="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+              <span className="text-sm text-muted-foreground font-medium">
                 {t("scrollDown")}
               </span>
-              <div className="w-6 h-10 border-2 border-neutral-400 dark:border-neutral-600 rounded-full p-1">
+              <div className="w-6 h-10 border-2 border-primary rounded-full p-1 group-hover:glow-purple transition-all">
                 <motion.div
                   animate={{ y: [0, 12, 0] }}
                   transition={{
@@ -254,7 +344,7 @@ export function HeroMotion({ name, title, description }: HeroMotionProps) {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="w-1.5 h-1.5 bg-neutral-600 dark:bg-neutral-400 rounded-full mx-auto"
+                  className="w-1.5 h-1.5 bg-primary rounded-full mx-auto"
                 />
               </div>
             </motion.div>

@@ -87,9 +87,9 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
     <section
       id="about"
       ref={sectionRef}
-      className="relative min-h-screen bg-white dark:bg-black py-32 overflow-hidden"
+      className="relative min-h-screen bg-background py-32 overflow-hidden"
     >
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements with new color system */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
@@ -101,7 +101,10 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-3xl"
+          className="absolute -top-1/2 -left-1/2 w-full h-full rounded-full blur-3xl opacity-20"
+          style={{
+            background: "radial-gradient(circle, hsl(var(--gradient-start)) 0%, transparent 70%)"
+          }}
         />
         <motion.div
           animate={{
@@ -113,7 +116,10 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-pink-500/10 to-purple-500/10 rounded-full blur-3xl"
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full rounded-full blur-3xl opacity-20"
+          style={{
+            background: "radial-gradient(circle, hsl(var(--gradient-end)) 0%, transparent 70%)"
+          }}
         />
       </div>
 
@@ -126,16 +132,16 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
               whileInView={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full mb-6"
             >
-              <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-accent">
                 {t("badge")}
               </span>
             </motion.div>
 
             <h2 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="gradient-text animate-gradient">
                 {t("title")}
               </span>
             </h2>
@@ -152,8 +158,8 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                 transition={{ type: "spring", stiffness: 300 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl transform rotate-3" />
-                <div className="relative bg-white dark:bg-neutral-900 p-2 rounded-3xl shadow-2xl transform -rotate-3">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-3xl transform rotate-3" />
+                <div className="relative bg-card p-2 rounded-3xl shadow-2xl transform -rotate-3 border border-border">
                   <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
                     <Image
                       src="https://github.com/benyaminrmb.png"
@@ -166,10 +172,9 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                       className="absolute inset-0 border-4 border-transparent rounded-2xl"
                       animate={{
                         borderColor: [
-                          "rgba(147, 51, 234, 0.5)",
-                          "rgba(59, 130, 246, 0.5)",
-                          "rgba(236, 72, 153, 0.5)",
-                          "rgba(147, 51, 234, 0.5)",
+                          "hsl(var(--primary))",
+                          "hsl(var(--accent))",
+                          "hsl(var(--primary))",
                         ],
                       }}
                       transition={{ duration: 3, repeat: Infinity }}
@@ -197,8 +202,8 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                     [index % 2 === 0 ? "left" : "right"]: "-10%",
                   }}
                 >
-                  <div className="p-3 bg-white dark:bg-neutral-900 rounded-full shadow-xl border border-neutral-200 dark:border-neutral-800">
-                    <Icon className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                  <div className="p-3 bg-card rounded-full shadow-xl border border-border glow-purple">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
                 </motion.div>
               ))}
@@ -213,7 +218,7 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-neutral-100"
+                className="text-3xl md:text-4xl font-bold text-foreground"
               >
                 {name}
               </motion.h3>
@@ -223,7 +228,7 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed"
+                className="text-lg text-muted-foreground leading-relaxed"
               >
                 {description}
               </motion.p>
@@ -240,10 +245,10 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                       viewport={{ once: true }}
                       className="flex items-start gap-3"
                     >
-                      <div className="mt-1 p-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full">
+                      <div className="mt-1 p-1 bg-gradient-to-r from-primary to-accent rounded-full">
                         <div className="w-2 h-2 bg-white rounded-full" />
                       </div>
-                      <p className="text-neutral-700 dark:text-neutral-300">{highlight}</p>
+                      <p className="text-foreground/80">{highlight}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -267,13 +272,13 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                   whileHover={{ scale: 1.05, y: -5 }}
                   className="relative group"
                 >
-                  <div className="p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-lg group-hover:shadow-2xl transition-all duration-300">
-                    <Icon className="w-8 h-8 text-purple-600 dark:text-purple-400 mb-3" />
-                    <div className="stat-number text-3xl font-bold text-neutral-900 dark:text-neutral-100" data-target={stat.target}>
+                  <div className="p-6 bg-card rounded-2xl border border-border shadow-lg group-hover:shadow-2xl group-hover:glow-purple transition-all duration-300">
+                    <Icon className="w-8 h-8 text-primary mb-3" />
+                    <div className="stat-number text-3xl font-bold text-foreground" data-target={stat.target}>
                       0
                     </div>
-                    <div className="text-sm text-purple-600 dark:text-purple-400 font-medium">{stat.suffix}</div>
-                    <div className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">{stat.label}</div>
+                    <div className="text-sm text-primary font-medium">{stat.suffix}</div>
+                    <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                   </div>
                 </motion.div>
               );
@@ -284,7 +289,7 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
         {/* Skills Progress Bars */}
         <ScrollReveal delay={0.3}>
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <h3 className="text-3xl font-bold text-center mb-12 gradient-text">
               {t("skills")}
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
@@ -298,20 +303,23 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
                   className="space-y-2"
                 >
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                    <span className="text-sm font-medium text-foreground">
                       {skill.name}
                     </span>
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
+                    <span className="text-sm font-bold text-primary">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="h-3 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
+                  <div className="h-3 bg-secondary rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                      className="h-full bg-gradient-to-r from-purple-600 to-blue-600 rounded-full relative overflow-hidden"
+                      className="h-full rounded-full relative overflow-hidden"
+                      style={{
+                        background: "linear-gradient(to right, hsl(var(--gradient-start)), hsl(var(--gradient-end)))"
+                      }}
                     >
                       <motion.div
                         animate={{
