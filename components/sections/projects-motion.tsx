@@ -299,13 +299,13 @@ export function ProjectsMotion({ projects }: ProjectsMotionProps) {
                           <motion.div
                             className="h-full rounded-full"
                             style={{
-                              background: "linear-gradient(to right, hsl(var(--gradient-start)), hsl(var(--gradient-end)))"
+                              background: "linear-gradient(to right, hsl(var(--gradient-start)), hsl(var(--gradient-end)))",
+                              transformOrigin: "left"
                             }}
                             initial={{ scaleX: 0 }}
                             whileInView={{ scaleX: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: index * 0.1 }}
-                            style={{ transformOrigin: "left" }}
                           />
                         </motion.div>
                       </div>
