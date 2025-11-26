@@ -7,16 +7,24 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hi, I'm",
+    "greeting": "👋 Welcome",
     "viewWork": "View My Work",
-    "getInTouch": "Get In Touch",
+    "contact": "Get In Touch",
     "downloadCV": "Download CV",
-    "scrollDown": "Scroll Down"
+    "scrollDown": "Scroll to explore"
   },
   "about": {
     "title": "About Me",
+    "badge": "Get to know me",
     "role": "Full-Stack Developer",
     "availableForHire": "Available for hire",
+    "skills": "Technical Skills",
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Projects Completed",
+      "clients": "Happy Clients",
+      "code": "Lines of Code"
+    },
     "highlights": {
       "cleanCode": {
         "title": "Clean Code",
@@ -45,7 +53,9 @@
   },
   "projects": {
     "title": "Featured Projects",
-    "subtitle": "Here are some of my recent works that showcase my skills and passion for development",
+    "badge": "My Work",
+    "description": "Here are some of my recent works that showcase my skills and passion for development",
+    "viewAll": "View All Projects",
     "visitProject": "Visit Project",
     "learnMore": "Learn More"
   },
@@ -54,7 +64,9 @@
     "subtitle": "Technologies and tools I use to build amazing web applications"
   },
   "experience": {
-    "title": "Experience & Education",
+    "title": "Work Experience",
+    "badge": "Career Journey",
+    "description": "My professional journey and the amazing projects I've worked on",
     "workExperience": "Work Experience",
     "education": "Education"
   },
@@ -64,11 +76,22 @@
   },
   "contact": {
     "title": "Let's Connect",
-    "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision",
+    "badge": "Get in touch",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision",
+    "social": "Connect with me",
     "readyToStart": "Ready to Start a Project?",
-    "description": "I'm available for freelance work, consulting, and full-time opportunities. Let's create something amazing together!",
     "sendEmail": "Send Me an Email",
     "viewGitHub": "View GitHub Profile",
-    "currentlyAvailable": "Currently available for new opportunities"
+    "currentlyAvailable": "Currently available for new opportunities",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "email": "Your Email",
+      "emailPlaceholder": "john@example.com",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "submit": "Send Message",
+      "success": "Message sent successfully!"
+    }
   }
 }

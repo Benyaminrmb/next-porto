@@ -16,14 +16,16 @@ export interface PortfolioData {
     image: string;
     link: string;
     tags?: string[];
+    category?: string;
   }[];
   skills: string[];
   contact: {
     email: string;
-    phone: string;
+    phone?: string;
+    location?: string;
     website?: string;
-    github: string;
-    linkedin: string;
+    github?: string;
+    linkedin?: string;
   };
   languages: {
     name: string;
@@ -38,19 +40,22 @@ export interface PortfolioData {
     };
   }[];
   education: {
-    degree: string;
-    institution: string;
-    location: string;
-    duration: string;
-    gpa: string;
-  }[];
-  workExperience: {
+    id: number;
     title: string;
     company: string;
     location: string;
-    duration: string;
-    current?: boolean;
-    responsibilities: string[];
+    period: string;
+    description: string[];
+    technologies?: string[];
+  }[];
+  workExperience: {
+    id: number;
+    title: string;
+    company: string;
+    location: string;
+    period: string;
+    description: string[];
+    technologies?: string[];
   }[];
   stats?: {
     yearsOfExperience: string;
