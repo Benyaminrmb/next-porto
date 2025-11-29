@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
 
-import { HeroMotion } from '@/components/sections/hero-motion';
-import { AboutMotion } from '@/components/sections/about-motion';
-import { ProjectsMotion } from '@/components/sections/projects-motion';
-import { ExperienceMotion } from '@/components/sections/experience-motion';
-import { ContactMotion } from '@/components/sections/contact-motion';
+import { HeroRedesign } from '@/components/sections/hero-redesign';
+import { AboutRedesign } from '@/components/sections/about-redesign';
+import { ProjectsRedesign } from '@/components/sections/projects-redesign';
+import { TechStackRedesign } from '@/components/sections/tech-stack-redesign';
+import { ExperienceRedesign } from '@/components/sections/experience-redesign';
+import { ContactRedesign } from '@/components/sections/contact-redesign';
 import { BackToTop } from '@/components/ui/back-to-top';
 import { CustomCursor } from '@/components/ui/custom-cursor';
 
@@ -39,11 +40,12 @@ export default async function Home() {
     <>
       <CustomCursor />
       <main className="scroll-smooth">
-        <HeroMotion name={data.name} title={data.title} description={data.description} />
-        <AboutMotion name={data.name} description={data.description} highlights={highlights} />
-        <ProjectsMotion projects={data.projects} />
-        <ExperienceMotion experiences={allExperiences} />
-        <ContactMotion
+        <HeroRedesign name={data.name} title={data.title} description={data.description} />
+        <AboutRedesign name={data.name} description={data.description} highlights={highlights} />
+        <TechStackRedesign />
+        <ProjectsRedesign projects={data.projects} />
+        <ExperienceRedesign experiences={allExperiences} />
+        <ContactRedesign
           email={data.contact.email}
           phone={data.contact.phone}
           location={data.contact.location}
