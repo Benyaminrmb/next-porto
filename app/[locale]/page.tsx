@@ -1,14 +1,12 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
 
-import { HeroRedesign } from '@/components/sections/hero-redesign';
-import { AboutRedesign } from '@/components/sections/about-redesign';
-import { ProjectsRedesign } from '@/components/sections/projects-redesign';
-import { TechStackRedesign } from '@/components/sections/tech-stack-redesign';
-import { ExperienceRedesign } from '@/components/sections/experience-redesign';
-import { ContactRedesign } from '@/components/sections/contact-redesign';
-import { BackToTop } from '@/components/ui/back-to-top';
-import { CustomCursor } from '@/components/ui/custom-cursor';
+import { HeroClean } from '@/components/sections/hero-clean';
+import { AboutClean } from '@/components/sections/about-clean';
+import { TechStackClean } from '@/components/sections/tech-stack-clean';
+import { ProjectsClean } from '@/components/sections/projects-clean';
+import { ExperienceClean } from '@/components/sections/experience-clean';
+import { ContactClean } from '@/components/sections/contact-clean';
 
 // Dynamically generate metadata
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,26 +35,22 @@ export default async function Home() {
   ];
 
   return (
-    <>
-      <CustomCursor />
-      <main className="scroll-smooth">
-        <HeroRedesign name={data.name} title={data.title} description={data.description} />
-        <AboutRedesign name={data.name} description={data.description} highlights={highlights} />
-        <TechStackRedesign />
-        <ProjectsRedesign projects={data.projects} />
-        <ExperienceRedesign experiences={allExperiences} />
-        <ContactRedesign
-          email={data.contact.email}
-          phone={data.contact.phone}
-          location={data.contact.location}
-          social={{
-            github: "https://github.com/benyaminrmb",
-            linkedin: "https://linkedin.com/in/benyaminrmb",
-            twitter: "https://twitter.com/benyaminrmb"
-          }}
-        />
-      </main>
-      <BackToTop />
-    </>
+    <main className="min-h-screen">
+      <HeroClean name={data.name} title={data.title} description={data.description} />
+      <AboutClean name={data.name} description={data.description} highlights={highlights} />
+      <TechStackClean />
+      <ProjectsClean projects={data.projects} />
+      <ExperienceClean experiences={allExperiences} />
+      <ContactClean
+        email={data.contact.email}
+        phone={data.contact.phone}
+        location={data.contact.location}
+        social={{
+          github: "https://github.com/benyaminrmb",
+          linkedin: "https://linkedin.com/in/benyaminrmb",
+          twitter: "https://twitter.com/benyaminrmb"
+        }}
+      />
+    </main>
   );
 }

@@ -2,129 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: black;
-}
-
 @layer base {
   :root {
-    /* Modern vibrant color system */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
-
-    /* Cards with subtle gradient */
-    --card: 0 0% 99%;
+    --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-
-    /* Vibrant primary - Purple/Blue gradient */
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Soft secondary */
-    --secondary: 220 14% 96%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
-
-    --muted: 220 14% 96%;
+    --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-
-    /* Accent colors - Cyan/Blue */
-    --accent: 199 89% 48%;
-    --accent-foreground: 0 0% 100%;
-
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
-    /* Borders */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262 83% 58%;
-
-    /* Radius */
-    --radius: 0.75rem;
-
-    /* Extended color palette */
-    --gradient-start: 262 83% 58%;  /* Purple */
-    --gradient-mid: 237 100% 65%;   /* Blue */
-    --gradient-end: 199 89% 48%;    /* Cyan */
-
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
-
-    --info: 199 89% 48%;
-    --info-foreground: 0 0% 100%;
-
-    /* Chart colors */
-    --chart-1: 262 83% 58%;
-    --chart-2: 199 89% 48%;
-    --chart-3: 142 76% 36%;
-    --chart-4: 38 92% 50%;
-    --chart-5: 340 82% 52%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    /* Dark mode with vibrant accents */
-    --background: 222 47% 4%;
-    --foreground: 210 40% 98%;
-
-    /* Cards */
-    --card: 222 47% 6%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 6%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Vibrant primary - Brighter in dark mode */
-    --primary: 262 90% 65%;
-    --primary-foreground: 222 47% 4%;
-
-    /* Secondary */
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    /* Accent - Bright cyan in dark mode */
-    --accent: 199 95% 55%;
-    --accent-foreground: 222 47% 4%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 210 40% 98%;
-
-    /* Borders */
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 262 90% 65%;
-
-    /* Extended colors for dark mode */
-    --gradient-start: 262 90% 65%;
-    --gradient-mid: 237 100% 70%;
-    --gradient-end: 199 95% 55%;
-
-    --success: 142 76% 45%;
-    --success-foreground: 222 47% 4%;
-
-    --warning: 38 92% 55%;
-    --warning-foreground: 222 47% 4%;
-
-    --info: 199 95% 55%;
-    --info-foreground: 222 47% 4%;
-
-    /* Chart colors - Brighter for dark mode */
-    --chart-1: 262 90% 65%;
-    --chart-2: 199 95% 55%;
-    --chart-3: 142 76% 45%;
-    --chart-4: 38 92% 55%;
-    --chart-5: 340 82% 60%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
@@ -139,141 +60,16 @@ body {
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer utilities {
-  .app-container {
-    @apply mx-auto flex max-w-[85rem] w-full items-center justify-between p-4;
-  }
-
-  /* Gradient text utilities */
-  .gradient-text {
-    @apply bg-gradient-to-r from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent;
-  }
-
-  /* Animation utilities */
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 8s ease infinite;
-  }
-
-  @keyframes gradient {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  /* Glow effects */
-  .glow-purple {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-  }
-
-  .glow-blue {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-  }
-
-  .glow-cyan {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
-  }
-
-  /* Glass morphism utilities */
-  .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
-  }
-
-  .glass-dark {
-    @apply bg-black/10 backdrop-blur-lg border border-white/10;
-  }
-
-  .glass-card {
-    @apply bg-card/40 backdrop-blur-xl border border-white/10 shadow-xl;
-  }
-
-  /* Typography utilities */
-  .text-display {
-    font-family: 'Space Grotesk', sans-serif;
-    @apply font-bold tracking-tight;
-  }
-
-  .text-body {
-    font-family: 'Inter', sans-serif;
-  }
-
-  /* Hover lift effect */
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
-  }
-
-  /* Gradient border */
-  .gradient-border {
-    position: relative;
-    background-clip: padding-box;
-    border: solid 2px transparent;
-  }
-
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    margin: -2px;
-    border-radius: inherit;
-    background: linear-gradient(to right, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
-  }
-
-  /* Staggered animation delay utilities */
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-
-  /* Section spacing */
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-16 md:py-24;
   }
 
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-}
-
-main {
-  @apply bg-background min-h-screen;
-  transform-origin: center top 0;
-  transition-property: transform, border-radius;
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.app-main {
-  section {
-    > div {
-      @apply app-container 2xl:border-r 2xl:border-l flex flex-col;
-    }
-    @apply border-b;
-  }
-}
-
-header {
-  @apply border-b;
-  > div {
-    @apply app-container 2xl:border-r 2xl:border-l;
-  }
-}
-
-footer {
-  > div {
-    @apply app-container 2xl:border-r 2xl:border-l;
-  }
-}
-
-.drawer-open {
-  @apply rounded-lg overflow-hidden;
-  transform: scale(0.96)
-    translate3d(0, calc(env(safe-area-inset-top) + 14px), 0);
 }
