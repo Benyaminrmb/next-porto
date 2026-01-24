@@ -46,7 +46,7 @@ export function ExperienceMotion({ experiences }: ExperienceMotionProps) {
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6"
             >
@@ -94,7 +94,7 @@ export function ExperienceMotion({ experiences }: ExperienceMotionProps) {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                      transition={{ type: "spring" as const, stiffness: 300, damping: 15 }}
                       viewport={{ once: true }}
                       className="absolute left-8 md:left-1/2 w-6 h-6 -ml-3 z-10"
                     >
@@ -120,7 +120,7 @@ export function ExperienceMotion({ experiences }: ExperienceMotionProps) {
                     <div className={`w-full md:w-[calc(50%-3rem)] ${isEven ? "md:pr-8 pl-20 md:pl-0" : "md:pl-8 pl-20 md:pr-0"}`}>
                       <motion.div
                         whileHover={{ scale: 1.02, y: -5 }}
-                        transition={{ type: "spring", stiffness: 300 }}
+                        transition={{ type: "spring" as const, stiffness: 300 }}
                         className="p-6 md:p-8 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-xl hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden group"
                       >
                         {/* Gradient Border on Hover */}

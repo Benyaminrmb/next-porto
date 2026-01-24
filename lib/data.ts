@@ -11,12 +11,17 @@ export interface PortfolioData {
   maritalStatus?: string;
   projects: {
     id: number;
+    slug: string;
     title: string;
     description: string;
+    longDescription?: string;
     image: string;
-    link: string;
+    screenshots?: string[];
+    link: string | null;
     tags?: string[];
     category?: string;
+    role?: string;
+    features?: string[];
   }[];
   skills: string[];
   contact: {

@@ -130,7 +130,7 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full mb-6"
             >
@@ -155,7 +155,7 @@ export function AboutMotion({ name, description, highlights }: AboutMotionProps)
             <div ref={imageRef} className="relative">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "spring" as const, stiffness: 300 }}
                 className="relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-3xl transform rotate-3" />

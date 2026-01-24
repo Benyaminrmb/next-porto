@@ -28,30 +28,101 @@
   "projects": [
     {
       "id": 1,
+      "slug": "eventoment",
       "title": "Eventoment",
       "description": "Social platform for event management with Laravel, Nuxt.js, and REST API. Includes event management system and Firebase notifications.",
-      "image": "https://eventoment.com/_nuxt/img/splash.f4b7423.png",
+      "longDescription": "Eventoment is a social networking platform designed for organizing and discovering events. Users can create events, invite friends, and connect with others who share similar interests. The platform features real-time notifications, event discovery, user profiles, and social interactions.",
+      "image": "/projects/eventoment/Screenshot 2026-01-24 at 11-41-16 ایونتومنت شبکه اجتماعی دورهمی ها.png",
+      "screenshots": [
+        "/projects/eventoment/Screenshot 2026-01-24 at 11-41-16 ایونتومنت شبکه اجتماعی دورهمی ها.png",
+        "/projects/eventoment/Screenshot 2026-01-24 at 11-42-13 ایونتومنت @abazar.png",
+        "/projects/eventoment/Screenshot 2026-01-24 at 11-43-18 ایونتومنت طبیعت بکر#.png"
+      ],
       "link": "https://eventoment.com",
       "tags": ["Laravel", "Nuxt.js", "REST API", "Firebase"],
-      "category": "web"
+      "category": "web",
+      "role": "Team Leader",
+      "features": [
+        "Event creation and management",
+        "User profiles and social connections",
+        "Real-time Firebase notifications",
+        "Event discovery and search",
+        "PWA support for mobile experience"
+      ]
     },
     {
       "id": 2,
+      "slug": "safar360",
       "title": "Safar360",
       "description": "Tourism website for booking flights, trains, hotels, and tours. Complete reservation system for travel services.",
-      "image": "/images/safar360.jpg",
+      "longDescription": "Safar360 is a comprehensive travel booking platform that enables users to search and book flights, trains, hotels, and tour packages. The platform integrates with multiple travel service providers and payment gateways to provide a seamless booking experience.",
+      "image": "/projects/safar360/Screenshot 2026-01-24 at 11-43-38 سفر360.png",
+      "screenshots": [
+        "/projects/safar360/Screenshot 2026-01-24 at 11-43-38 سفر360.png",
+        "/projects/safar360/Screenshot 2026-01-24 at 11-44-17 تور لحظه آخری کیش سفر360.png"
+      ],
       "link": "https://safar360.com",
       "tags": ["Laravel", "Vue.js", "Payment Gateway"],
-      "category": "web"
+      "category": "web",
+      "role": "Developer",
+      "features": [
+        "Flight and train ticket booking",
+        "Hotel reservations",
+        "Tour package booking",
+        "Payment gateway integration",
+        "SEO optimized for travel searches"
+      ]
     },
     {
       "id": 3,
-      "title": "Steel Rizan Automation",
+      "slug": "faraz-steel-rizan",
+      "title": "Faraz Steel Rizan",
       "description": "Company automation system for steel casting factory with Laravel/Filament, including database design, custom modules, and process optimization.",
-      "image": "/images/steelrizan.jpg",
+      "longDescription": "Faraz Steel Rizan is a comprehensive automation system built for a steel casting factory. The system manages production processes, inventory, ticketing, and administrative tasks. It features a modern admin panel with custom modules tailored to the specific needs of steel manufacturing operations.",
+      "image": "/projects/faraz/Screenshot 2026-01-24 at 11-37-31 فراز استیل ریزان.png",
+      "screenshots": [
+        "/projects/faraz/Screenshot 2026-01-24 at 11-37-31 فراز استیل ریزان.png",
+        "/projects/faraz/Screenshot 2026-01-24 at 11-38-31 داشبورد - فراز استیل ریزان.png",
+        "/projects/faraz/Screenshot 2026-01-24 at 11-39-13 تیکت_ها - فراز استیل ریزان.png",
+        "/projects/faraz/Screenshot 2026-01-24 at 11-39-58 مشاهده محصول - فراز استیل ریزان.png"
+      ],
       "link": "https://faraz.steelrizan.com",
       "tags": ["Laravel", "Filament", "Automation"],
-      "category": "web"
+      "category": "web",
+      "role": "Designer & Developer",
+      "features": [
+        "Production management dashboard",
+        "Inventory tracking system",
+        "Ticketing and support system",
+        "Product catalog management",
+        "Custom reporting modules"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "azar",
+      "title": "Azar",
+      "description": "Catalyst valuation system for automotive catalytic converters with dynamic formula calculations and precious metal price tracking.",
+      "longDescription": "Azar is a sophisticated B2B application for the automotive scrap metal industry. It calculates the value of catalytic converters based on their precious metal content (Platinum, Palladium, Rhodium). The system features a dynamic formula engine, real-time metal price tracking, and a comprehensive car catalog organized by brands and models.",
+      "image": "/projects/Azar/Screenshot 2026-01-24 at 11-52-13 داشبورد - Azar.png",
+      "screenshots": [
+        "/projects/Azar/Screenshot 2026-01-24 at 11-52-13 داشبورد - Azar.png",
+        "/projects/Azar/Screenshot 2026-01-24 at 11-48-54 کاتالیست_ها - Azar.png",
+        "/projects/Azar/Screenshot 2026-01-24 at 11-49-41 ویرایش فیلد کاتالیست - Azar.png"
+      ],
+      "link": null,
+      "tags": ["Laravel 12", "Filament v4", "PostgreSQL", "Tailwind CSS"],
+      "category": "web",
+      "role": "Full Stack Developer",
+      "features": [
+        "Dynamic formula calculation engine",
+        "Precious metal price tracking",
+        "Car brand and model catalog",
+        "User-specific pricing with discounts",
+        "OTP-based authentication",
+        "PDF report generation",
+        "Jalali calendar support"
+      ]
     }
   ],
   "contact": {

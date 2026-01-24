@@ -138,7 +138,7 @@ export function TechStack() {
               transition={{
                 duration: 0.5,
                 delay: index * 0.05,
-                type: "spring",
+                type: "spring" as const,
                 stiffness: 100,
               }}
               viewport={{ once: true }}

@@ -107,7 +107,7 @@ export function ProjectsMotion({ projects }: ProjectsMotionProps) {
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6"
             >

@@ -60,7 +60,7 @@ export function CardTilt({ children, className = "", glareEnable = true }: CardT
         rotateY,
       }}
       transition={{
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 20,
       }}

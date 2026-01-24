@@ -118,7 +118,7 @@ export function ContactMotion({
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-6"
             >
@@ -196,7 +196,7 @@ export function ContactMotion({
                           rel="noopener noreferrer"
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.1, type: "spring" }}
+                          transition={{ delay: index * 0.1, type: "spring" as const }}
                           viewport={{ once: true }}
                           whileHover={{ scale: 1.2, rotate: 5 }}
                           whileTap={{ scale: 0.9 }}
@@ -217,7 +217,7 @@ export function ContactMotion({
           <ScrollReveal direction="right">
             <motion.div
               whileHover={{ scale: 1.01 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: "spring" as const, stiffness: 300 }}
               className="p-8 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-xl relative overflow-hidden"
             >
               {/* Gradient Border */}

@@ -103,7 +103,7 @@ export function AboutSection({ name, description }: AboutSectionProps) {
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            transition={{ type: "spring" as const, stiffness: 100, delay: 0.2 }}
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 mb-4"
           >
@@ -168,7 +168,7 @@ export function AboutSection({ name, description }: AboutSectionProps) {
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ type: "spring", delay: 0.5 }}
+                  transition={{ type: "spring" as const, delay: 0.5 }}
                   viewport={{ once: true }}
                   className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg font-semibold"
                 >

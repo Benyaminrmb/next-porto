@@ -17,9 +17,11 @@ export default async function Projects() {
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <a href={project.link} className="text-primary hover:underline">
-                View Project
-              </a>
+              {project.link && (
+                <a href={project.link} className="text-primary hover:underline">
+                  View Project
+                </a>
+              )}
             </CardContent>
           </Card>
         ))}

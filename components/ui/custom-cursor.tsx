@@ -59,7 +59,7 @@ export function CustomCursor() {
         variants={variants}
         animate={cursorVariant}
         transition={{
-          type: "spring",
+          type: "spring" as const,
           stiffness: 500,
           damping: 28,
         }}
@@ -73,7 +73,7 @@ export function CustomCursor() {
           y: mousePosition.y - 2,
         }}
         transition={{
-          type: "spring",
+          type: "spring" as const,
           stiffness: 1000,
           damping: 28,
           mass: 0.1,

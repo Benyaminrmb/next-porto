@@ -32,7 +32,7 @@ export function MagneticButton({ children, className = "" }: MagneticButtonProps
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: "spring" as const, stiffness: 150, damping: 15, mass: 0.1 }}
       className={className}
     >
       {children}
