@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 
 interface Project {
@@ -26,14 +27,16 @@ interface ProjectsCleanProps {
 export function ProjectsClean({ projects }: ProjectsCleanProps) {
   const pathname = usePathname();
   const locale = pathname.startsWith('/fa') ? 'fa' : 'en';
+  const isRTL = locale === 'fa';
+  const t = useTranslations('pages.projects');
 
   return (
     <section id="projects" className="section-padding border-b">
       <div className="section-container">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Projects</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-3">{t('title')}</h2>
           <p className="text-muted-foreground">
-            Some of the projects I&apos;ve worked on
+            {t('description')}
           </p>
         </div>
 
@@ -74,8 +77,8 @@ export function ProjectsClean({ projects }: ProjectsCleanProps) {
                 {project.slug && (
                   <Button variant="default" size="sm" className="flex-1" asChild>
                     <Link href={`/${locale}/projects/${project.slug}`}>
-                      View Details
-                      <ArrowRight className="ml-2 h-3 w-3" />
+                      {t('viewDetails')}
+                      {isRTL ? <ArrowLeft className="mr-2 h-3 w-3" /> : <ArrowRight className="ml-2 h-3 w-3" />}
                     </Link>
                   </Button>
                 )}

@@ -3,11 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowLeft,
+  ArrowRight,
   ExternalLink,
   ChevronLeft,
   ChevronRight,
@@ -40,6 +42,8 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project, locale }: ProjectDetailProps) {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const t = useTranslations('projectDetail');
+  const isRTL = locale === 'fa';
 
   const images = project.screenshots && project.screenshots.length > 0
     ? project.screenshots
@@ -57,10 +61,10 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
     <section className="section-padding">
       <div className="section-container">
         {/* Back Button */}
-        <Link href={`/${locale}#projects`}>
+        <Link href={`/${locale}/projects`}>
           <Button variant="ghost" className="mb-8 -ml-2">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Projects
+            {isRTL ? <ArrowRight className="ml-2 h-4 w-4" /> : <ArrowLeft className="mr-2 h-4 w-4" />}
+            {t('backToProjects')}
           </Button>
         </Link>
 
@@ -146,7 +150,7 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
             {/* Tags */}
             {project.tags && project.tags.length > 0 && (
               <div className="space-y-2">
-                <h3 className="text-sm font-medium">Technologies</h3>
+                <h3 className="text-sm font-medium">{t('technologies')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, idx) => (
                     <Badge key={idx} variant="secondary">
@@ -161,7 +165,7 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
             {project.features && project.features.length > 0 && (
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-sm font-medium mb-3">Key Features</h3>
+                  <h3 className="text-sm font-medium mb-3">{t('keyFeatures')}</h3>
                   <ul className="space-y-2">
                     {project.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -182,8 +186,8 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit Project
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                  {t('visitProject')}
+                  <ExternalLink className={isRTL ? "mr-2 h-4 w-4" : "ml-2 h-4 w-4"} />
                 </a>
               </Button>
             )}

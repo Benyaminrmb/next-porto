@@ -8,8 +8,8 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const data = await getData();
+  const { locale, slug } = await params;
+  const data = await getData(locale);
   const project = data.projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
-  const data = await getData();
+  const data = await getData('en');
   const locales = ['en', 'fa'];
 
   return locales.flatMap((locale) =>
@@ -38,7 +38,7 @@ export async function generateStaticParams() {
 
 export default async function ProjectPage({ params }: PageProps) {
   const { locale, slug } = await params;
-  const data = await getData();
+  const data = await getData(locale);
   const project = data.projects.find((p) => p.slug === slug);
 
   if (!project) {

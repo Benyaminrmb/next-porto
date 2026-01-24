@@ -6,6 +6,43 @@
     "experience": "Experience",
     "contact": "Contact"
   },
+  "pages": {
+    "projects": {
+      "title": "Projects",
+      "description": "A collection of projects I've built, from social platforms to automation systems.",
+      "viewAll": "View all",
+      "viewDetails": "View Details"
+    },
+    "about": {
+      "title": "About",
+      "techStack": "Tech Stack",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "tools": "Tools & DevOps",
+      "other": "Other Skills",
+      "languages": "Languages"
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "My professional journey and education background.",
+      "workExperience": "Work Experience",
+      "education": "Education"
+    }
+  },
+  "home": {
+    "viewMyWork": "View my work",
+    "featuredProjects": "Featured Projects",
+    "letsWorkTogether": "Let's work together",
+    "contactDescription": "Have a project in mind or want to discuss an opportunity? I'd love to hear from you.",
+    "defaultTitle": "Full Stack Developer"
+  },
+  "projectDetail": {
+    "backToProjects": "Back to Projects",
+    "visitProject": "Visit Project",
+    "technologies": "Technologies",
+    "keyFeatures": "Key Features",
+    "role": "Role"
+  },
   "hero": {
     "greeting": "👋 Welcome",
     "viewWork": "View My Work",

@@ -70,9 +70,10 @@ export interface PortfolioData {
   };
 }
 
-// Reusable function to fetch data
-export async function getData(): Promise<PortfolioData> {
-  const filePath = path.join(process.cwd(), 'data', 'data.json');
+// Reusable function to fetch data with locale support
+export async function getData(locale: string = 'en'): Promise<PortfolioData> {
+  const fileName = locale === 'fa' ? 'data-fa.json' : 'data.json';
+  const filePath = path.join(process.cwd(), 'data', fileName);
   const jsonData = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(jsonData);
 }
