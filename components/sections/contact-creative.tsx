@@ -100,7 +100,7 @@ export function ContactCreative({ contact }: ContactCreativeProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight"
               >
                 {locale === 'fa' ? (
                   <>
@@ -122,7 +122,7 @@ export function ContactCreative({ contact }: ContactCreativeProps) {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto"
+                className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto"
               >
                 {locale === 'fa'
                   ? 'آماده‌ام تا ایده‌های شما را به واقعیت تبدیل کنم. بیایید پروژه بعدی را با هم بسازیم!'

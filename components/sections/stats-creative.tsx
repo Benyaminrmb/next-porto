@@ -45,10 +45,18 @@ export function StatsCreative({ stats }: StatsCreativeProps) {
   const pathname = usePathname();
   const locale = pathname.startsWith('/fa') ? 'fa' : 'en';
 
+  // Helper function to convert Persian/Arabic numerals to English
+  const parseNumber = (str: string): number => {
+    const persianToEnglish = str
+      .replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d).toString())
+      .replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d).toString());
+    return parseInt(persianToEnglish) || 0;
+  };
+
   const statsData = [
     {
       icon: Trophy,
-      value: parseInt(stats.yearsOfExperience),
+      value: parseNumber(stats.yearsOfExperience),
       suffix: '+',
       label: locale === 'fa' ? 'سال تجربه' : 'Years Experience',
       color: 'from-yellow-500 to-orange-500',
@@ -56,7 +64,7 @@ export function StatsCreative({ stats }: StatsCreativeProps) {
     },
     {
       icon: Briefcase,
-      value: parseInt(stats.projectsCompleted),
+      value: parseNumber(stats.projectsCompleted),
       suffix: '+',
       label: locale === 'fa' ? 'پروژه تکمیل شده' : 'Projects Completed',
       color: 'from-primary to-cyan-500',
@@ -64,7 +72,7 @@ export function StatsCreative({ stats }: StatsCreativeProps) {
     },
     {
       icon: Users,
-      value: parseInt(stats.clientsSatisfied),
+      value: parseNumber(stats.clientsSatisfied),
       suffix: '+',
       label: locale === 'fa' ? 'مشتری راضی' : 'Happy Clients',
       color: 'from-secondary to-purple-500',
@@ -128,7 +136,7 @@ export function StatsCreative({ stats }: StatsCreativeProps) {
               {locale === 'fa' ? 'آمار و ارقام' : 'By the Numbers'}
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight">
             {locale === 'fa' ? 'سفری که ساختم' : 'A Snapshot of My Journey'}
           </h2>
         </motion.div>

@@ -108,7 +108,7 @@ export function HeroCreative({ name, title, description }: HeroCreativeProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight mb-8 leading-[1.05]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight">
                 {locale === 'fa' ? (
                   <>
                     <motion.span
@@ -159,7 +159,7 @@ export function HeroCreative({ name, title, description }: HeroCreativeProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-white/60 leading-relaxed mb-14 max-w-3xl"
+              className="text-lg sm:text-xl md:text-2xl text-white/60 leading-relaxed mb-14 max-w-3xl"
             >
               {description}
             </motion.p>

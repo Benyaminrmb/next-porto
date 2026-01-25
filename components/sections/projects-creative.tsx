@@ -71,10 +71,10 @@ export function ProjectsCreative({ projects }: ProjectsCreativeProps) {
               {locale === 'fa' ? 'نمونه کارها' : 'Portfolio'}
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text mb-6 leading-tight">
             {locale === 'fa' ? 'پروژه‌های برجسته' : 'Featured Work'}
           </h2>
-          <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto">
             {locale === 'fa'
               ? 'مجموعه‌ای از بهترین کارهایی که با عشق ساخته‌ام'
               : 'A collection of my best work, crafted with passion'}
