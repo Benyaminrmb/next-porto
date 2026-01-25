@@ -62,7 +62,7 @@ export interface PortfolioData {
     description: string[];
     technologies?: string[];
   }[];
-  stats?: {
+  stats: {
     yearsOfExperience: string;
     projectsCompleted: string;
     clientsSatisfied: string;
