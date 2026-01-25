@@ -2,6 +2,7 @@
   "nav": {
     "about": "درباره من",
     "projects": "پروژه‌ها",
+    "blog": "بلاگ",
     "skills": "مهارت‌ها",
     "experience": "تجربه",
     "contact": "تماس"
@@ -27,6 +28,15 @@
       "description": "مسیر حرفه‌ای و سوابق تحصیلی من.",
       "workExperience": "تجربه کاری",
       "education": "تحصیلات"
+    },
+    "blog": {
+      "title": "بلاگ",
+      "description": "افکار، آموزش‌ها و بینش‌های توسعه وب.",
+      "readMore": "ادامه مطلب",
+      "minRead": "دقیقه مطالعه",
+      "backToBlog": "بازگشت به بلاگ",
+      "publishedOn": "منتشر شده در",
+      "recentPosts": "پست‌های اخیر"
     }
   },
   "home": {

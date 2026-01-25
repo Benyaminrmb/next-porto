@@ -1,0 +1,64 @@
+---
+title: "Building Modern Web Applications with Next.js 15"
+titleFa: "ساخت اپلیکیشن‌های وب مدرن با Next.js 15"
+description: "A comprehensive guide to building fast, scalable web applications using the latest features in Next.js 15."
+descriptionFa: "راهنمای جامع برای ساخت اپلیکیشن‌های وب سریع و مقیاس‌پذیر با استفاده از آخرین ویژگی‌های Next.js 15."
+date: "2024-12-15"
+author: "Benyamin"
+tags: ["Next.js", "React", "TypeScript", "Web Development"]
+image: "/images/blog/nextjs.jpg"
+---
+
+## Introduction
+
+Next.js 15 brings exciting new features that make building modern web applications easier and more performant than ever. In this guide, we'll explore the key features and best practices.
+
+## App Router and Server Components
+
+The App Router has revolutionized how we build React applications. With React Server Components, you can:
+
+- Reduce client-side JavaScript bundle size
+- Fetch data directly in components
+- Improve initial page load performance
+
+```tsx
+// app/posts/page.tsx
+async function PostsPage() {
+  const posts = await fetch('https://api.example.com/posts');
+
+  return (
+    <div>
+      {posts.map(post => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
+  );
+}
+```
+
+## Server Actions
+
+Server Actions allow you to define server-side functions that can be called directly from your components:
+
+```tsx
+'use server'
+
+async function createPost(formData: FormData) {
+  const title = formData.get('title');
+  // Save to database
+}
+```
+
+## Turbopack
+
+Next.js 15 includes Turbopack, a Rust-based bundler that's significantly faster than Webpack:
+
+- Up to 700x faster cold starts
+- Up to 10x faster HMR
+- Better memory efficiency
+
+## Conclusion
+
+Next.js 15 is a game-changer for web development. The combination of Server Components, Server Actions, and Turbopack creates an incredibly powerful development experience.
+
+Start building with Next.js 15 today and experience the future of web development!

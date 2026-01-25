@@ -4,9 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardBody, Chip, Button } from "@heroui/react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -61,19 +59,22 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
     <section className="section-padding">
       <div className="section-container">
         {/* Back Button */}
-        <Link href={`/${locale}/projects`}>
-          <Button variant="ghost" className="mb-8 -ml-2">
-            {isRTL ? <ArrowRight className="ml-2 h-4 w-4" /> : <ArrowLeft className="mr-2 h-4 w-4" />}
-            {t('backToProjects')}
-          </Button>
-        </Link>
+        <Button
+          as={Link}
+          href={`/${locale}/projects`}
+          variant="light"
+          className="mb-8"
+          startContent={isRTL ? <ArrowRight className="h-4 w-4" /> : <ArrowLeft className="h-4 w-4" />}
+        >
+          {t('backToProjects')}
+        </Button>
 
         <div className="grid gap-8 lg:grid-cols-5">
           {/* Image Gallery - Takes 3 columns */}
           <div className="lg:col-span-3 space-y-4">
             {/* Main Image */}
             <div
-              className="relative w-full aspect-video rounded-lg overflow-hidden border bg-muted cursor-pointer group"
+              className="relative w-full aspect-video rounded-xl overflow-hidden border border-divider bg-default-100 cursor-pointer group"
               onClick={() => setIsLightboxOpen(true)}
             >
               <Image
@@ -113,10 +114,10 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`relative flex-shrink-0 w-24 h-16 rounded-md overflow-hidden border-2 transition-colors ${
+                    className={`relative flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                       selectedImage === idx
                         ? "border-primary"
-                        : "border-transparent hover:border-muted-foreground/50"
+                        : "border-transparent hover:border-default-300"
                     }`}
                   >
                     <Image
@@ -137,12 +138,12 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
             <div>
               <h1 className="text-3xl font-bold tracking-tight mb-2">{project.title}</h1>
               {project.role && (
-                <div className="flex items-center gap-2 text-muted-foreground mb-4">
+                <div className="flex items-center gap-2 text-default-500 mb-4">
                   <User className="h-4 w-4" />
                   <span>{project.role}</span>
                 </div>
               )}
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-default-500 leading-relaxed">
                 {project.longDescription || project.description}
               </p>
             </div>
@@ -153,9 +154,9 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
                 <h3 className="text-sm font-medium">{t('technologies')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, idx) => (
-                    <Badge key={idx} variant="secondary">
+                    <Chip key={idx} variant="flat" size="sm">
                       {tag}
-                    </Badge>
+                    </Chip>
                   ))}
                 </div>
               </div>
@@ -164,31 +165,34 @@ export function ProjectDetail({ project, locale }: ProjectDetailProps) {
             {/* Features */}
             {project.features && project.features.length > 0 && (
               <Card>
-                <CardContent className="pt-6">
+                <CardBody className="p-4">
                   <h3 className="text-sm font-medium mb-3">{t('keyFeatures')}</h3>
                   <ul className="space-y-2">
                     {project.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li key={idx} className="flex items-start gap-2 text-sm text-default-500">
                         <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                </CardContent>
+                </CardBody>
               </Card>
             )}
 
             {/* Action Button */}
             {project.link && (
-              <Button className="w-full" asChild>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('visitProject')}
-                  <ExternalLink className={isRTL ? "mr-2 h-4 w-4" : "ml-2 h-4 w-4"} />
-                </a>
+              <Button
+                as="a"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="primary"
+                variant="solid"
+                radius="lg"
+                className="w-full"
+                endContent={<ExternalLink className="h-4 w-4" />}
+              >
+                {t('visitProject')}
               </Button>
             )}
           </div>

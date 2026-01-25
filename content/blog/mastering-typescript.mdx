@@ -1,0 +1,67 @@
+---
+title: "Mastering TypeScript: Advanced Patterns"
+titleFa: "تسلط بر TypeScript: الگوهای پیشرفته"
+description: "Deep dive into advanced TypeScript patterns that will level up your code quality and developer experience."
+descriptionFa: "بررسی عمیق الگوهای پیشرفته TypeScript که کیفیت کد و تجربه توسعه‌دهنده را ارتقا می‌دهد."
+date: "2024-11-28"
+author: "Benyamin"
+tags: ["TypeScript", "JavaScript", "Programming"]
+image: "/images/blog/typescript.jpg"
+---
+
+## Why TypeScript?
+
+TypeScript has become the standard for building large-scale JavaScript applications. Let's explore some advanced patterns that make it truly powerful.
+
+## Utility Types
+
+TypeScript provides powerful utility types that help you transform types:
+
+```typescript
+// Partial - makes all properties optional
+type PartialUser = Partial<User>;
+
+// Pick - select specific properties
+type UserName = Pick<User, 'firstName' | 'lastName'>;
+
+// Omit - exclude specific properties
+type UserWithoutPassword = Omit<User, 'password'>;
+```
+
+## Conditional Types
+
+Create types that depend on conditions:
+
+```typescript
+type IsArray<T> = T extends any[] ? true : false;
+
+type Check1 = IsArray<string[]>; // true
+type Check2 = IsArray<string>;   // false
+```
+
+## Template Literal Types
+
+Build complex string types:
+
+```typescript
+type EventName = `on${Capitalize<string>}`;
+// matches: "onClick", "onSubmit", "onHover", etc.
+```
+
+## Generic Constraints
+
+Make your generics more specific:
+
+```typescript
+interface HasId {
+  id: number;
+}
+
+function findById<T extends HasId>(items: T[], id: number): T | undefined {
+  return items.find(item => item.id === id);
+}
+```
+
+## Conclusion
+
+TypeScript's type system is incredibly powerful. Mastering these patterns will help you write safer, more maintainable code.

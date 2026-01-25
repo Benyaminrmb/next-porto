@@ -2,6 +2,7 @@
   "nav": {
     "about": "About",
     "projects": "Projects",
+    "blog": "Blog",
     "skills": "Skills",
     "experience": "Experience",
     "contact": "Contact"
@@ -27,6 +28,15 @@
       "description": "My professional journey and education background.",
       "workExperience": "Work Experience",
       "education": "Education"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Thoughts, tutorials, and insights on web development.",
+      "readMore": "Read more",
+      "minRead": "min read",
+      "backToBlog": "Back to Blog",
+      "publishedOn": "Published on",
+      "recentPosts": "Recent Posts"
     }
   },
   "home": {

@@ -1,0 +1,81 @@
+---
+title: "Laravel Best Practices for 2024"
+titleFa: "بهترین روش‌های لاراول برای سال ۲۰۲۴"
+description: "Essential Laravel patterns and practices for building maintainable and scalable applications."
+descriptionFa: "الگوها و روش‌های ضروری لاراول برای ساخت اپلیکیشن‌های قابل نگهداری و مقیاس‌پذیر."
+date: "2024-10-20"
+author: "Benyamin"
+tags: ["Laravel", "PHP", "Backend", "API"]
+image: "/images/blog/laravel.jpg"
+---
+
+## Introduction
+
+Laravel continues to be one of the most popular PHP frameworks. Here are the best practices I've learned from years of building production applications.
+
+## Use Service Classes
+
+Keep your controllers thin by moving business logic to service classes:
+
+```php
+// app/Services/UserService.php
+class UserService
+{
+    public function createUser(array $data): User
+    {
+        $user = User::create($data);
+        $user->assignRole('member');
+        event(new UserCreated($user));
+
+        return $user;
+    }
+}
+```
+
+## Repository Pattern
+
+Abstract your data access layer:
+
+```php
+interface UserRepositoryInterface
+{
+    public function find(int $id): ?User;
+    public function findByEmail(string $email): ?User;
+    public function create(array $data): User;
+}
+```
+
+## API Resources
+
+Use API Resources for consistent API responses:
+
+```php
+class UserResource extends JsonResource
+{
+    public function toArray($request): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'created_at' => $this->created_at->toISOString(),
+        ];
+    }
+}
+```
+
+## Queue Everything
+
+Use queues for any task that doesn't need immediate completion:
+
+```php
+// Instead of sending email directly
+Mail::to($user)->send(new WelcomeEmail($user));
+
+// Queue it
+Mail::to($user)->queue(new WelcomeEmail($user));
+```
+
+## Conclusion
+
+Following these patterns will help you build Laravel applications that are easy to maintain and scale. Happy coding!
