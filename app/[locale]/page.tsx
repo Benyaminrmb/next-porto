@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
 
-import { HeroCreative } from '@/components/sections/hero-creative';
-import { AboutCreative } from '@/components/sections/about-creative';
-import { StatsCreative } from '@/components/sections/stats-creative';
-import { ProjectsCreative } from '@/components/sections/projects-creative';
-import { ExperienceCreative } from '@/components/sections/experience-creative';
-import { ContactCreative } from '@/components/sections/contact-creative';
+import { HeroMinimal } from '@/components/sections/hero-minimal';
+import { AboutMinimal } from '@/components/sections/about-minimal';
+import { ProjectsMinimal } from '@/components/sections/projects-minimal';
+import { ContactMinimal } from '@/components/sections/contact-minimal';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -27,28 +25,21 @@ export default async function Home({ params }: PageProps) {
 
   return (
     <main className="min-h-screen">
-      <HeroCreative
+      <HeroMinimal
         name={data.name}
         title={data.title}
         description={data.description}
       />
-      <AboutCreative
+      <AboutMinimal
         description={data.description}
         languages={data.languages}
         skills={data.skills}
         stats={data.stats}
       />
-      <StatsCreative
-        stats={data.stats}
-      />
-      <ProjectsCreative
+      <ProjectsMinimal
         projects={data.projects}
       />
-      <ExperienceCreative
-        workExperience={data.workExperience}
-        education={data.education}
-      />
-      <ContactCreative
+      <ContactMinimal
         contact={data.contact}
       />
     </main>
