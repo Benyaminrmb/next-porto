@@ -19,8 +19,6 @@ export function ClientLayout({
       <HeroUIProvider>
         <div className="flex min-h-screen flex-col">
           <HeaderClean />
-          {/* Spacer for fixed header */}
-          <div className="h-20" />
           <main className="flex-1">
             {children}
           </main>

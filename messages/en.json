@@ -5,7 +5,11 @@
     "blog": "Blog",
     "skills": "Skills",
     "experience": "Experience",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resume": "Resume",
+    "now": "Now",
+    "stack": "Stack",
+    "brain": "Brain"
   },
   "pages": {
     "projects": {
@@ -37,6 +41,32 @@
       "backToBlog": "Back to Blog",
       "publishedOn": "Published on",
       "recentPosts": "Recent Posts"
+    },
+    "resume": {
+      "title": "Resume",
+      "subtitle": "Six years of shipping software — the long form.",
+      "downloadPdf": "Download PDF",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills"
+    },
+    "now": {
+      "title": "What I'm doing now.",
+      "subtitle": "A page inspired by Derek Sivers' /now. Live snapshot, re-written, not appended.",
+      "lastEdited": "Last edited",
+      "nextRefresh": "Next refresh: when something changes."
+    },
+    "stack": {
+      "title": "Tools I reach for.",
+      "subtitle": "The stack, practices, and habits behind how I build and ship."
+    },
+    "brain": {
+      "title": "Things in my head.",
+      "subtitle": "A loosely-curated list of ideas, YouTube concepts, and tools I want to build. Sorted by recency. Nothing here is a commitment.",
+      "all": "All",
+      "ideas": "Ideas",
+      "youtube": "YouTube",
+      "build": "To build"
     }
   },
   "home": {

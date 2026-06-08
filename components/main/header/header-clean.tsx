@@ -1,99 +1,177 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { ModeToggle } from '@/components/main/mode-toggle';
-import { LanguageSwitcher } from '@/components/ui/language-switcher';
-import { Menu, X } from 'lucide-react';
+import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import { ModeToggle } from '@/components/main/mode-toggle'
+import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import { Github, Menu, X } from 'lucide-react'
+
+const NAV_SHORTCUTS: Record<string, string> = {
+  about: 'A',
+  projects: 'P',
+  blog: 'B',
+  experience: 'E',
+  resume: 'R',
+  now: 'N',
+  stack: 'S',
+  brain: 'K',
+}
 
 export default function HeaderClean() {
-  const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const t = useTranslations('nav');
+  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const t = useTranslations('nav')
 
-  const locale = pathname.startsWith('/fa') ? 'fa' : 'en';
+  const locale = pathname.startsWith('/fa') ? 'fa' : 'en'
+  const isRTL = locale === 'fa'
 
-  const navLinks = [
-    { title: t('projects'), href: `/${locale}/projects` },
-    { title: t('blog'), href: `/${locale}/blog` },
-    { title: t('about'), href: `/${locale}/about` },
-    { title: t('experience'), href: `/${locale}/experience` },
-  ];
+  const primaryLinks = [
+    { key: 'about',    title: t('about'),    href: `/${locale}/about` },
+    { key: 'projects', title: t('projects'), href: `/${locale}/projects` },
+    { key: 'blog',     title: t('blog'),     href: `/${locale}/blog` },
+    { key: 'brain',    title: t('brain'),    href: `/${locale}/brain` },
+  ]
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
+  const secondaryLinks = [
+    { key: 'experience', title: t('experience'), href: `/${locale}/experience` },
+    { key: 'resume',     title: t('resume'),     href: `/${locale}/resume` },
+    { key: 'now',        title: t('now'),        href: `/${locale}/now` },
+    { key: 'stack',      title: t('stack'),      href: `/${locale}/stack` },
+  ]
+
+  const navLinks = [...primaryLinks, ...secondaryLinks]
+
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + '/')
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-6">
-      <div className="section-container-wide">
-        <nav className="flex items-center justify-between px-6 py-4">
-          {/* Simple Text Logo */}
+    <header
+      className="fixed top-0 inset-x-0 z-50"
+      style={{
+        background: 'color-mix(in oklab, var(--bg) 80%, transparent)',
+        backdropFilter: 'blur(12px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(12px) saturate(180%)',
+        borderBottom: '1px solid var(--clr-border)',
+      }}
+    >
+      <div className="page-container">
+        <nav className="flex items-center gap-7 h-[56px]">
+
+          {/* ── Brand ── */}
           <Link
             href={`/${locale}`}
-            className="text-xl font-bold text-white hover:text-white/80 transition-colors"
+            className="flex items-center gap-2.5 flex-shrink-0 text-sm font-semibold"
+            style={{ color: 'var(--fg-2)', letterSpacing: '-0.01em' }}
+            aria-label="Home"
           >
-            Benyamin
+            <span className="brand-mark">B</span>
+            <span className="hidden sm:inline">Benyamin Bolhassani</span>
+            <span
+              className="hidden sm:inline font-normal"
+              style={{ color: 'var(--fg-4)', fontSize: 11, fontFamily: 'var(--font-geist-mono, ui-monospace, monospace)' }}
+            >
+              {isRTL ? '/ نمونه‌کار' : '/ portfolio'}
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          {/* ── Desktop nav ── */}
+          <div className="hidden md:flex items-center gap-1 ms-auto">
+            {primaryLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors ${
-                  isActive(link.href)
-                    ? 'text-white font-medium'
-                    : 'text-white/60 hover:text-white'
-                }`}
+                className="nav-link"
+                style={{
+                  color: isActive(link.href) ? 'var(--fg)' : undefined,
+                  background: isActive(link.href) ? 'var(--bg-3)' : undefined,
+                  borderColor: isActive(link.href) ? 'var(--clr-border)' : 'transparent',
+                }}
               >
                 {link.title}
+                {!isRTL && <kbd>{NAV_SHORTCUTS[link.key]}</kbd>}
+              </Link>
+            ))}
+            <span className="nav-divider hidden lg:block" />
+            {secondaryLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="nav-link nav-link-sm hidden lg:flex"
+                style={{
+                  color: isActive(link.href) ? 'var(--fg)' : undefined,
+                  background: isActive(link.href) ? 'var(--bg-3)' : undefined,
+                  borderColor: isActive(link.href) ? 'var(--clr-border)' : 'transparent',
+                }}
+              >
+                {link.title}
+                {!isRTL && <kbd>{NAV_SHORTCUTS[link.key]}</kbd>}
               </Link>
             ))}
           </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-3">
-            {/* Settings */}
-            <div className="flex items-center gap-2">
-              <LanguageSwitcher />
-              <ModeToggle />
-            </div>
+          {/* ── Right controls ── */}
+          <div className="flex items-center gap-2 ms-auto md:ms-0">
+            <span className="status-dot hidden md:inline-flex" />
+            <span className="hidden md:inline eyebrow" style={{ color: 'var(--fg-4)' }}>
+              {locale === 'fa' ? 'در دسترس' : 'Available'}
+            </span>
 
-            {/* Mobile Menu Toggle */}
+            <LanguageSwitcher />
+            <ModeToggle />
+
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="icon-btn hidden sm:grid"
+              title="GitHub"
+            >
+              <Github className="h-3.5 w-3.5" />
+            </a>
+
+            {/* Mobile hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-white/60 hover:text-white transition-colors"
+              className="icon-btn md:hidden"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
           </div>
         </nav>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 px-6 py-4 border-t border-white/10">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-sm transition-colors ${
-                    isActive(link.href)
-                      ? 'text-white font-medium'
-                      : 'text-white/60 hover:text-white'
-                  }`}
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* ── Mobile menu ── */}
+      {isMenuOpen && (
+        <div
+          className="md:hidden"
+          style={{ borderTop: '1px solid var(--clr-border)', background: 'var(--bg-2)' }}
+        >
+          <div className="page-container py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center justify-between px-3 py-2.5 rounded-md text-sm transition-colors"
+                style={{
+                  color: isActive(link.href) ? 'var(--fg)' : 'var(--fg-3)',
+                  background: isActive(link.href) ? 'var(--bg-3)' : 'transparent',
+                }}
+              >
+                {link.title}
+                {isActive(link.href) && (
+                  <span className="chip chip-accent text-[10px]">
+                    {locale === 'fa' ? 'فعال' : 'Active'}
+                  </span>
+                )}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
-  );
+  )
 }

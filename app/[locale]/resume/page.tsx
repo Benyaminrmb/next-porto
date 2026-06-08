@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { getData } from '@/lib/data'
-import { getAllPosts } from '@/lib/blog'
-import { HomeIndex } from '@/components/sections/home-index'
+import { ResumeBento } from '@/components/sections/resume-bento'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -11,26 +10,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params
   const data = await getData(locale)
   return {
-    title: data.name,
+    title: `Resume | ${data.name}`,
     description: data.description,
   }
 }
 
-export default async function Home({ params }: PageProps) {
+export default async function ResumePage({ params }: PageProps) {
   const { locale } = await params
   const data = await getData(locale)
-  const posts = getAllPosts()
 
   return (
     <main>
-      <HomeIndex
-        name={data.name}
+      <ResumeBento
         description={data.description}
-        availability={data.availability}
-        email={data.contact.email}
-        projects={data.projects}
-        posts={posts}
-        brain={data.brain ?? []}
+        workExperience={data.workExperience}
+        education={data.education}
+        skillGroups={data.skillGroups ?? []}
+        languages={data.languages}
+        contact={data.contact}
+        details={data.details}
       />
     </main>
   )

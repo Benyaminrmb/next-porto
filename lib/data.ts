@@ -9,6 +9,7 @@ export interface PortfolioData {
   birthDate?: string;
   location?: string;
   maritalStatus?: string;
+  availability?: string;
   projects: {
     id: number;
     slug: string;
@@ -21,9 +22,15 @@ export interface PortfolioData {
     tags?: string[];
     category?: string;
     role?: string;
+    year?: string;
+    company?: string;
     features?: string[];
   }[];
   skills: string[];
+  skillGroups?: {
+    group: string;
+    items: string[];
+  }[];
   contact: {
     email: string;
     phone?: string;
@@ -31,6 +38,7 @@ export interface PortfolioData {
     website?: string;
     github?: string;
     linkedin?: string;
+    youtube?: string;
   };
   languages: {
     name: string;
@@ -68,6 +76,31 @@ export interface PortfolioData {
     clientsSatisfied: string;
     linesOfCode: string;
   };
+  teaching?: {
+    title: string;
+    description: string;
+    link: string;
+    period: string;
+  };
+  details?: {
+    born: string;
+    status: string;
+    military: string;
+  };
+  now?: {
+    updated: string;
+    items: { label: string; value: string }[];
+  };
+  stack?: {
+    group: string;
+    items: { k: string; v: string }[];
+  }[];
+  brain?: {
+    kind: 'idea' | 'youtube' | 'build';
+    title: string;
+    body: string;
+    date: string;
+  }[];
 }
 
 // Reusable function to fetch data with locale support
