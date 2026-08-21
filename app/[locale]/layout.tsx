@@ -3,16 +3,10 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Instrument_Serif, Vazirmatn } from 'next/font/google'
+import { Vazirmatn } from 'next/font/google'
 import '../assets/globals.scss'
 import { ClientLayout } from './client-layout'
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-instrument-serif',
-})
 const vazirmatn = Vazirmatn({ subsets:['arabic'], variable:'--font-vazirmatn', display:'swap' })
 
 export default async function LocaleLayout({
@@ -38,7 +32,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body
-        className={`antialiased ${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable} ${vazirmatn.variable}`}
+        className={`antialiased ${GeistSans.variable} ${GeistMono.variable} ${vazirmatn.variable}`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ClientLayout>{children}</ClientLayout>

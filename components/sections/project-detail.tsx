@@ -1,5 +1,78 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
-import type { PortfolioData } from '@/lib/data'
-export function ProjectDetail({project,locale}:{project:PortfolioData['projects'][number];locale:string}){const fa=locale==='fa';const Back=fa?ArrowRight:ArrowLeft;return <article className="page shell"><Link className="text-link" href={`/${locale}/projects`}><Back size={16}/>{fa?'همه پروژه‌ها':'All projects'}</Link><header className="page-intro"><p className="kicker">{project.year} — {project.role}</p><h1>{project.title}</h1><p className="lede">{project.longDescription||project.description}</p><div className="actions">{project.link&&<a className="button primary" href={project.link} target="_blank" rel="noreferrer">{fa?'مشاهده وب‌سایت':'Visit website'}<ArrowUpRight size={17}/></a>}</div></header><div className="project-meta"><span>{fa?'نقش':'Role'}: {project.role}</span><span>{fa?'شرکت':'Company'}: {project.company}</span></div><div className="tags">{project.tags?.map(x=><span key={x}>{x}</span>)}</div>{project.features?.length&&<section className="timeline-section"><h2>{fa?'دستاوردها و قابلیت‌ها':'Outcomes & capabilities'}</h2><div className="data-list">{project.features.map((x,i)=><article key={x}><p className="kicker">0{i+1}</p><h2>{x}</h2></article>)}</div></section>}<section className="timeline-section"><h2>{fa?'نمای محصول':'Product gallery'}</h2><div className="project-list">{(project.screenshots?.length?project.screenshots:[project.image]).map((src,i)=><div className="project-image" key={src}><Image src={src} alt={`${project.title} ${fa?'نمای محصول':'interface view'} ${i+1}`} fill sizes="(max-width:800px) 100vw, 50vw"/></div>)}</div></section></article>}
+import {ArrowLeft, ArrowRight, ArrowUpRight} from 'lucide-react'
+import type {PortfolioData} from '@/lib/data'
+export function ProjectDetail({
+  project,
+  locale,
+}: {
+  project: PortfolioData['projects'][number]
+  locale: string
+}) {
+  const fa = locale === 'fa'
+  const Back = fa ? ArrowRight : ArrowLeft
+  const meta = [project.company, project.role, project.year]
+    .filter(Boolean)
+    .join(' · ')
+  return (
+    <article className="page shell">
+      <Link className="text-link" href={`/${locale}/projects`}>
+        <Back size={16} />
+        {fa ? 'همه پروژه‌ها' : 'All projects'}
+      </Link>
+      <header className="page-intro">
+        <p className="kicker">{meta}</p>
+        <h1>{project.title}</h1>
+        <p className="lede">{project.longDescription || project.description}</p>
+        <div className="actions">
+          {project.link && (
+            <a
+              className="button primary"
+              href={project.link}
+              target="_blank"
+              rel="noreferrer">
+              {fa ? 'مشاهده وب‌سایت' : 'Visit website'}
+              <ArrowUpRight size={17} />
+            </a>
+          )}
+        </div>
+      </header>
+      <div className="tags">
+        {project.tags?.map((x) => (
+          <span key={x}>{x}</span>
+        ))}
+      </div>
+      {project.features?.length && (
+        <section className="timeline-section">
+          <h2>{fa ? 'بخش‌های مهم پروژه' : 'What I worked on'}</h2>
+          <div className="data-list">
+            {project.features.map((x, i) => (
+              <article key={x}>
+                <p className="kicker">0{i + 1}</p>
+                <h2>{x}</h2>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="timeline-section">
+        <h2>{fa ? 'نمای محصول' : 'Product gallery'}</h2>
+        <div className="project-list">
+          {(project.screenshots?.length
+            ? project.screenshots
+            : [project.image]
+          ).map((src, i) => (
+            <div className="project-image" key={src}>
+              <Image
+                src={src}
+                alt={`${project.title} ${fa ? 'نمای محصول' : 'interface view'} ${i + 1}`}
+                fill
+                sizes="(max-width:800px) 100vw, 50vw"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+  )
+}
