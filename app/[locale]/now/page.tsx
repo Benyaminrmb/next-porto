@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getData } from '@/lib/data'
-import { NowBento } from '@/components/sections/now-bento'
+import { SimpleDataPage } from '@/components/sections/editorial'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -23,7 +23,7 @@ export default async function NowPage({ params }: PageProps) {
 
   return (
     <main>
-      <NowBento now={data.now} />
+      <SimpleDataPage type="now" data={data} locale={locale}/>
     </main>
   )
 }

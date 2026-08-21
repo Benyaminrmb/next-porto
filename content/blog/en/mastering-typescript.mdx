@@ -1,0 +1,43 @@
+---
+title: "Mastering TypeScript: Advanced Patterns"
+description: "Useful TypeScript patterns for safer code without making types harder to understand."
+date: "2024-11-28"
+author: "Benyamin"
+tags: ["TypeScript", "JavaScript", "Programming"]
+---
+
+## Types should explain the domain
+
+TypeScript is most valuable when a type describes a real business rule. Prefer a small vocabulary of clear domain types over clever abstractions that only their author understands.
+
+## Model valid states
+
+Discriminated unions make invalid combinations difficult to create:
+
+```typescript
+type RequestState<T> =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'success'; data: T }
+  | { status: 'error'; message: string }
+```
+
+Now every branch carries exactly the fields it needs. A switch statement can also use `never` to ensure new states are handled.
+
+## Constrain generics
+
+Generics should preserve useful information, not erase it. Add constraints when an operation truly requires a property, and let inference do the rest.
+
+```typescript
+function findById<T extends { id: number }>(items: T[], id: number) {
+  return items.find(item => item.id === id)
+}
+```
+
+## Validate at runtime
+
+Static types stop at network and storage boundaries. Parse untrusted data before treating it as a domain object. The combination of runtime validation and precise static types gives a system its strongest guarantees.
+
+## Conclusion
+
+Good TypeScript feels quiet. It catches mistakes, improves refactors, and communicates intent without turning the type system into a second application.

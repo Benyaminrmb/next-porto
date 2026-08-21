@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
-import { WorkBento } from '@/components/sections/work-bento';
+import { ProjectsEditorial } from '@/components/sections/editorial';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -21,7 +21,7 @@ export default async function ProjectsPage({ params }: PageProps) {
 
   return (
     <main>
-      <WorkBento projects={data.projects} />
+      <ProjectsEditorial data={data} locale={locale} />
     </main>
   );
 }

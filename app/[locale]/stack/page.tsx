@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getData } from '@/lib/data'
-import { StackBento } from '@/components/sections/stack-bento'
+import { SimpleDataPage } from '@/components/sections/editorial'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -21,7 +21,7 @@ export default async function StackPage({ params }: PageProps) {
 
   return (
     <main>
-      <StackBento stack={data.stack ?? []} />
+      <SimpleDataPage type="stack" data={data} locale={locale}/>
     </main>
   )
 }

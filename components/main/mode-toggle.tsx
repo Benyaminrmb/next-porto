@@ -19,7 +19,7 @@ export function ModeToggle() {
 
   if (!mounted) {
     return (
-      <Button isIconOnly variant="flat" radius="lg" size="sm">
+      <Button isIconOnly variant="flat" radius="lg" size="sm" aria-label="Toggle color theme">
         <Sun className="h-4 w-4" />
       </Button>
     )
@@ -31,6 +31,7 @@ export function ModeToggle() {
       variant="flat"
       radius="lg"
       size="sm"
+      aria-label={theme === 'dark' ? 'Use light theme' : 'Use dark theme'}
       onPress={toggleTheme}
     >
       {theme === 'dark' ? (

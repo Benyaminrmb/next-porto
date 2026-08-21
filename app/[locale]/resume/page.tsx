@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getData } from '@/lib/data'
-import { ResumeBento } from '@/components/sections/resume-bento'
+import { ExperienceEditorial } from '@/components/sections/editorial'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -21,15 +21,7 @@ export default async function ResumePage({ params }: PageProps) {
 
   return (
     <main>
-      <ResumeBento
-        description={data.description}
-        workExperience={data.workExperience}
-        education={data.education}
-        skillGroups={data.skillGroups ?? []}
-        languages={data.languages}
-        contact={data.contact}
-        details={data.details}
-      />
+      <ExperienceEditorial data={data} locale={locale} resume/>
     </main>
   )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
-import { ExperienceBento } from '@/components/sections/experience-bento';
+import { ExperienceEditorial } from '@/components/sections/editorial';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -21,7 +21,7 @@ export default async function ExperiencePage({ params }: PageProps) {
 
   return (
     <main>
-      <ExperienceBento workExperience={data.workExperience} education={data.education} />
+      <ExperienceEditorial data={data} locale={locale}/>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import { getData } from '@/lib/data';
-import { BlogListingBento } from '@/components/sections/blog-listing-bento';
+import { BlogEditorial } from '@/components/sections/editorial';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -17,12 +17,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function BlogPage({ params }: PageProps) {
-  await params;
-  const posts = getAllPosts();
+  const { locale } = await params;
+  const posts = getAllPosts(locale);
 
   return (
     <main>
-      <BlogListingBento posts={posts} />
+      <BlogEditorial posts={posts} locale={locale} />
     </main>
   );
 }

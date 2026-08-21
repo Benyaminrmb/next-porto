@@ -1,0 +1,37 @@
+---
+title: "Laravel Practices for Maintainable Applications"
+description: "Patterns for keeping production Laravel systems clear, testable, and fast."
+date: "2024-10-20"
+author: "Benyamin"
+tags: ["Laravel", "PHP", "Backend", "API"]
+---
+
+## Keep controllers at the edge
+
+Controllers should translate an HTTP request into an application operation, then translate the result back into a response. Business rules belong in focused actions or services where they can be tested without a web request.
+
+```php
+final class CreateUser
+{
+    public function handle(CreateUserData $data): User
+    {
+        return DB::transaction(fn () => User::create($data->toArray()));
+    }
+}
+```
+
+## Make queries visible
+
+The most expensive performance problems often hide behind convenient relationships. Inspect query counts, select only needed columns, eager-load intentionally, and paginate collections that can grow. Treat hundreds of queries for one screen as a defect.
+
+## Queue slow side effects
+
+Email, imports, reports, and third-party synchronization rarely belong in the request cycle. Jobs should be idempotent, retry safely, and expose enough context in logs to diagnose a failure.
+
+## Test behavior
+
+Prioritize tests around permissions, money, state transitions, and integration boundaries. A smaller suite that protects business rules is more useful than a large suite coupled to implementation details.
+
+## Conclusion
+
+Maintainable Laravel is not about adding a pattern everywhere. It is about clear boundaries, observable queries, safe background work, and code shaped around the domain.

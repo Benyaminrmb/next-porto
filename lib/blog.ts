@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 
-const postsDirectory = path.join(process.cwd(), 'content/blog');
+const postsDirectory = (locale: string) => path.join(process.cwd(), 'content/blog', locale === 'fa' ? 'fa' : 'en');
 
 export interface BlogPost {
   slug: string;
@@ -32,17 +32,18 @@ export interface BlogPostMeta {
   readingTime: string;
 }
 
-export function getAllPosts(): BlogPostMeta[] {
-  if (!fs.existsSync(postsDirectory)) {
+export function getAllPosts(locale = 'en'): BlogPostMeta[] {
+  const directory = postsDirectory(locale);
+  if (!fs.existsSync(directory)) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(directory);
   const posts = fileNames
     .filter((fileName) => fileName.endsWith('.mdx'))
     .map((fileName) => {
       const slug = fileName.replace(/\.mdx$/, '');
-      const fullPath = path.join(postsDirectory, fileName);
+      const fullPath = path.join(directory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
       const stats = readingTime(content);
@@ -65,9 +66,9 @@ export function getAllPosts(): BlogPostMeta[] {
   return posts;
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
+export function getPostBySlug(locale: string, slug: string): BlogPost | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+    const fullPath = path.join(postsDirectory(locale), `${slug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     const stats = readingTime(content);
@@ -90,12 +91,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
   }
 }
 
-export function getAllPostSlugs(): string[] {
-  if (!fs.existsSync(postsDirectory)) {
+export function getAllPostSlugs(locale = 'en'): string[] {
+  const directory = postsDirectory(locale);
+  if (!fs.existsSync(directory)) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(directory);
   return fileNames
     .filter((fileName) => fileName.endsWith('.mdx'))
     .map((fileName) => fileName.replace(/\.mdx$/, ''));

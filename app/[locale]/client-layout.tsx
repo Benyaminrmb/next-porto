@@ -13,15 +13,15 @@ export function ClientLayout({
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="light"
+      enableSystem={false}
       disableTransitionOnChange>
       <HeroUIProvider>
         <div className="flex min-h-screen flex-col">
           <HeaderClean />
-          <main className="flex-1">
+          <div className="flex-1">
             {children}
-          </main>
+          </div>
           <FooterClean />
         </div>
       </HeroUIProvider>

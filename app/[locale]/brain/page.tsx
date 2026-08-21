@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getData } from '@/lib/data'
-import { BrainBento } from '@/components/sections/brain-bento'
+import { SimpleDataPage } from '@/components/sections/editorial'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -21,7 +21,7 @@ export default async function BrainPage({ params }: PageProps) {
 
   return (
     <main>
-      <BrainBento brain={data.brain ?? []} />
+      <SimpleDataPage type="brain" data={data} locale={locale}/>
     </main>
   )
 }

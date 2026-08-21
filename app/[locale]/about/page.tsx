@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getData } from '@/lib/data';
-import { AboutFullBento } from '@/components/sections/about-full-bento';
+import { AboutEditorial } from '@/components/sections/editorial';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -21,14 +21,7 @@ export default async function AboutPage({ params }: PageProps) {
 
   return (
     <main>
-      <AboutFullBento
-        description={data.description}
-        availability={data.availability}
-        skillGroups={data.skillGroups ?? []}
-        languages={data.languages}
-        stats={data.stats}
-        teaching={data.teaching}
-      />
+      <AboutEditorial data={data} locale={locale}/>
     </main>
   );
 }

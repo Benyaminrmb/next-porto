@@ -1,0 +1,34 @@
+---
+title: "Building Modern Web Applications with Next.js"
+description: "A practical guide to fast, scalable applications with the App Router."
+date: "2024-12-15"
+author: "Benyamin"
+tags: ["Next.js", "React", "TypeScript"]
+---
+
+## Start with the server
+
+Modern Next.js applications work best when the server is the default. Server Components keep data access close to its source, reduce browser JavaScript, and make the first render useful sooner. Add a client boundary only where interaction requires one.
+
+## Design the data boundary
+
+Fetch in the component that owns the data and cache deliberately. A page whose inventory changes hourly should not share a policy with a marketing page that changes monthly. Explicit choices are easier to reason about than a universal default.
+
+```tsx
+export default async function ProjectsPage() {
+  const projects = await getProjects()
+  return <ProjectList projects={projects} />
+}
+```
+
+## Mutations with Server Actions
+
+Server Actions are useful when a form and its mutation belong together. Validate every input on the server, authorize the action, return understandable errors, and revalidate only the data that changed.
+
+## Performance is a product feature
+
+Measure bundles, image dimensions, database calls, and cache hit rates. Framework features help, but they do not replace knowing what the user is waiting for. A fast application is the result of many small, intentional decisions.
+
+## Conclusion
+
+The strongest architecture is usually the least surprising one: server-first rendering, small interactive islands, explicit caching, and clear ownership of data.

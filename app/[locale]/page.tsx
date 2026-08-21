@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { getData } from '@/lib/data'
-import { getAllPosts } from '@/lib/blog'
-import { HomeIndex } from '@/components/sections/home-index'
+import { HomeEditorial } from '@/components/sections/editorial'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -10,28 +9,13 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   const data = await getData(locale)
-  return {
-    title: data.name,
-    description: data.description,
-  }
+  return { title: `${data.name} — ${data.title}`, description: data.description,
+    alternates: { canonical: `/${locale}`, languages: { en:'/en', fa:'/fa' } },
+    openGraph: { title: `${data.name} — ${data.title}`, description:data.description, type:'website', locale:locale==='fa'?'fa_IR':'en_US' } }
 }
 
 export default async function Home({ params }: PageProps) {
   const { locale } = await params
   const data = await getData(locale)
-  const posts = getAllPosts()
-
-  return (
-    <main>
-      <HomeIndex
-        name={data.name}
-        description={data.description}
-        availability={data.availability}
-        email={data.contact.email}
-        projects={data.projects}
-        posts={posts}
-        brain={data.brain ?? []}
-      />
-    </main>
-  )
+  return <main><HomeEditorial data={data} locale={locale}/></main>
 }
