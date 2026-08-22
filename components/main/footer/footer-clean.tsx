@@ -20,11 +20,12 @@ export default function FooterClean() {
           </p>
         </div>
         <nav>
+          <Link href={`/${l}/projects`}>
+            {l === 'fa' ? 'پروژه‌ها' : 'Projects'}
+          </Link>
           <Link href={`/${l}/resume`}>{l === 'fa' ? 'رزومه' : 'Resume'}</Link>
-          <Link href={`/${l}/now`}>{l === 'fa' ? 'اکنون' : 'Now'}</Link>
-          <Link href={`/${l}/stack`}>{l === 'fa' ? 'ابزارها' : 'Stack'}</Link>
-          <Link href={`/${l}/brain`}>
-            {l === 'fa' ? 'یادداشت‌ها' : 'Notes'}
+          <Link href={`/${l}#expertise`}>
+            {l === 'fa' ? 'تخصص' : 'Expertise'}
           </Link>
         </nav>
         <div className="footer-contact">

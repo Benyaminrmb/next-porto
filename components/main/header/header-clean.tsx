@@ -1,8 +1,7 @@
 'use client'
 import {useState} from 'react'
 import Link from 'next/link'
-import {useParams, usePathname} from 'next/navigation'
-import {useTranslations} from 'next-intl'
+import {useParams} from 'next/navigation'
 import {Menu, X} from 'lucide-react'
 import {ModeToggle} from '@/components/main/mode-toggle'
 import {LanguageSwitcher} from '@/components/ui/language-switcher'
@@ -10,14 +9,12 @@ import {LanguageSwitcher} from '@/components/ui/language-switcher'
 export default function HeaderClean() {
   const [open, setOpen] = useState(false)
   const params = useParams<{locale: string}>()
-  const pathname = usePathname()
-  const t = useTranslations('nav')
   const locale = params.locale === 'fa' ? 'fa' : 'en'
   const links = [
-    ['projects', t('projects')],
-    ['about', t('about')],
-    ['experience', t('experience')],
-    ['blog', locale === 'fa' ? 'نوشته‌ها' : 'Writing'],
+    ['#work', locale === 'fa' ? 'پروژه‌ها' : 'Work'],
+    ['#expertise', locale === 'fa' ? 'تخصص' : 'Expertise'],
+    ['#experience', locale === 'fa' ? 'تجربه' : 'Experience'],
+    ['#about', locale === 'fa' ? 'درباره' : 'About'],
   ]
   return (
     <header className="site-header">
@@ -28,10 +25,7 @@ export default function HeaderClean() {
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {links.map(([path, label]) => (
-            <Link
-              className={pathname.includes(`/${path}`) ? 'active' : ''}
-              key={path}
-              href={`/${locale}/${path}`}>
+            <Link key={path} href={`/${locale}${path}`}>
               {label}
             </Link>
           ))}
@@ -57,7 +51,7 @@ export default function HeaderClean() {
             <Link
               onClick={() => setOpen(false)}
               key={path}
-              href={`/${locale}/${path}`}>
+              href={`/${locale}${path}`}>
               {label}
             </Link>
           ))}
