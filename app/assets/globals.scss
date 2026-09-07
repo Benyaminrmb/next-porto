@@ -1351,11 +1351,56 @@ html[dir='rtl'] h2 {
 
 .sp-hero {
   position: relative;
-  min-height: 760px;
+  min-height: 820px;
   padding-block: 132px 68px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.sp-hero > :not(.activity-grid) {
+  position: relative;
+  z-index: 1;
+}
+
+.activity-grid {
+  position: absolute;
+  z-index: 0;
+  inset: 88px -9vw 24px 38%;
+  display: grid;
+  grid-template-columns: repeat(12, 13px);
+  grid-auto-rows: 13px;
+  gap: 6px;
+  justify-content: end;
+  align-content: center;
+  pointer-events: none;
+  opacity: 0.46;
+  mask-image: radial-gradient(ellipse at center, #000 8%, transparent 72%);
+}
+
+.activity-grid span {
+  border-radius: 2px;
+  background: rgba(49, 142, 74, 0.28);
+  opacity: 0.24;
+  animation: activity-pulse var(--activity-duration) ease-in-out
+    var(--activity-delay) infinite;
+}
+
+@keyframes activity-pulse {
+  0%,
+  72%,
+  100% {
+    opacity: 0.22;
+    box-shadow: none;
+  }
+  82% {
+    opacity: var(--activity-strength);
+    box-shadow: 0 0 8px rgba(69, 176, 97, 0.12);
+  }
+}
+
+.dark .activity-grid span {
+  background: rgba(74, 180, 101, 0.24);
 }
 
 .sp-hero-top {
@@ -1449,6 +1494,39 @@ html[dir='rtl'] .sp-kicker {
   color: var(--sp-muted);
   font-size: clamp(17px, 1.7vw, 20px);
   line-height: 1.7;
+}
+
+.sp-proof {
+  width: min(720px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 48px;
+  border-block: 1px solid var(--sp-line);
+}
+
+.sp-proof div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 15px 20px;
+}
+
+.sp-proof div:first-child {
+  padding-inline-start: 0;
+}
+
+.sp-proof div + div {
+  border-inline-start: 1px solid var(--sp-line);
+}
+
+.sp-proof strong {
+  font: 650 24px/1.2 var(--display);
+  letter-spacing: -0.035em;
+}
+
+.sp-proof span {
+  color: var(--sp-muted);
+  font-size: 11px;
 }
 
 .sp-actions {
@@ -2086,8 +2164,13 @@ html[dir='rtl'] .sp-timeline h3 {
   }
 
   .sp-hero {
-    min-height: 720px;
+    min-height: 820px;
     padding-top: 130px;
+  }
+
+  .activity-grid {
+    inset: 90px -105px 120px 30%;
+    opacity: 0.32;
   }
 
   .sp-hero-top {
@@ -2103,6 +2186,20 @@ html[dir='rtl'] .sp-timeline h3 {
 
   .sp-hero-bottom {
     margin-top: 34px;
+  }
+
+  .sp-proof {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+
+  .sp-proof div {
+    padding: 11px 0;
+  }
+
+  .sp-proof div + div {
+    border-inline-start: 0;
+    border-top: 1px solid var(--sp-line);
   }
 
   .sp-scroll {
@@ -2159,5 +2256,12 @@ html[dir='rtl'] .sp-timeline h3 {
 
   .sp-contact-actions {
     flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activity-grid span {
+    animation: none !important;
+    opacity: 0.26;
   }
 }

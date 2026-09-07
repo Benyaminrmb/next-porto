@@ -1,9 +1,9 @@
 {
   "name": "Benyamin Bolhassani",
-  "title": "Full-Stack Software Engineer / AI Engineer",
-  "description": "I’m a full-stack software engineer with 6+ years of experience building web products, internal tools, and automation systems. I like getting close to the actual problem, keeping the architecture clear, and making slow or awkward parts of a product noticeably better.",
+  "title": "Full-Stack Software Engineer | AI Engineering",
+  "description": "Full-stack software engineer with 6+ years of experience building web applications, CRM systems, and automation platforms. I combine Laravel and modern JavaScript with database optimization, modular architecture, and practical AI-agent workflows.",
   "birthDate": "1379/4/9",
-  "location": "",
+  "location": "Tehran, Iran",
   "maritalStatus": "Single",
   "availability": "Open to new & remote roles",
   "skills": [
@@ -25,18 +25,35 @@
     "Webpack",
     "System Design",
     "Database Design",
-    "CI/CD",
+    "Modular Architecture",
+    "Docker",
+    "GitLab CI/CD",
+    "GitHub Actions",
     "Git",
     "Scrum"
   ],
   "skillGroups": [
     {
       "group": "AI Engineering",
-      "items": ["Multi-Agent Systems", "Prompt Engineering", "AI-Augmented Workflows", "LLM Tooling", "Automation"]
+      "items": [
+        "Multi-Agent Systems",
+        "Prompt Engineering",
+        "AI-Augmented Workflows",
+        "LLM Tooling",
+        "Automation"
+      ]
     },
     {
       "group": "Backend",
-      "items": ["PHP", "Laravel", "Livewire", "REST API", "PostgreSQL", "Redis", "Multi-Tenancy"]
+      "items": [
+        "PHP",
+        "Laravel",
+        "Livewire",
+        "REST API",
+        "PostgreSQL",
+        "Redis",
+        "Multi-Tenancy"
+      ]
     },
     {
       "group": "Frontend",
@@ -44,7 +61,15 @@
     },
     {
       "group": "Architecture & Delivery",
-      "items": ["System Design", "Database Design", "CI/CD", "Git", "Scrum"]
+      "items": [
+        "System Design",
+        "Database Design",
+        "Modular Architecture",
+        "Docker",
+        "GitLab CI/CD",
+        "GitHub Actions",
+        "Git"
+      ]
     }
   ],
   "projects": [
@@ -242,28 +267,43 @@
       "id": 1,
       "title": "Full-Stack Developer",
       "company": "Web Negah",
-      "location": "",
+      "location": "Tehran, Iran",
       "period": "Feb 2025 — Present",
       "description": [
-        "Design and build web apps, CRM systems, and PWAs across a range of client projects",
-        "Engineer multi-agent AI systems and documentation frameworks (Rules) that accelerate the whole team's delivery",
-        "Build modular, reusable packages that speed up the start of every new project"
+        "Build web applications, CRM systems, and progressive web apps across client projects",
+        "Develop multi-agent AI systems and shared documentation frameworks to support team delivery",
+        "Create reusable, modular packages to streamline new project development"
       ],
-      "technologies": ["Laravel", "Filament", "Livewire", "PHP", "Multi-Agent Systems", "Automation"]
+      "technologies": [
+        "Laravel",
+        "Filament",
+        "Livewire",
+        "PHP",
+        "Multi-Agent Systems",
+        "Automation"
+      ]
     },
     {
       "id": 2,
-      "title": "Full-Stack Developer · Lead",
+      "title": "Lead Full-Stack Developer",
       "company": "Iran Technology",
-      "location": "",
+      "location": "Tehran, Iran",
       "period": "Oct 2019 — Jul 2025",
       "description": [
-        "Lead developer of Eventoment, the company's flagship social platform for event management",
-        "Cut a critical flow from ~900 database queries to ~30 through eager loading and query optimization",
-        "Raised SEO to an A score and used Webpack bundling to shrink payloads and accelerate page loads",
-        "Tuned server infrastructure and databases for performance and scalability across the platform"
+        "Led development of Eventoment, the company's flagship event-management social platform",
+        "Reduced a critical flow from approximately 900 database queries to 30 through eager loading and query optimization",
+        "Built the Nuxt.js frontend and GitHub Actions CI/CD pipeline for Eventoment",
+        "Optimized frontend bundles, server infrastructure, and databases to improve performance and scalability"
       ],
-      "technologies": ["Laravel", "Nuxt.js", "REST API", "Firebase", "Vue.js", "MySQL", "Redis"]
+      "technologies": [
+        "Laravel",
+        "Nuxt.js",
+        "REST API",
+        "Firebase",
+        "Vue.js",
+        "MySQL",
+        "Redis"
+      ]
     }
   ],
   "teaching": {
@@ -279,57 +319,75 @@
   },
   "stats": {
     "yearsOfExperience": "6+",
-    "projectsCompleted": "15+",
-    "clientsSatisfied": "10+",
-    "linesOfCode": "100K+"
+    "queryReduction": "~900 → ~30",
+    "englishScore": "87/100"
   },
   "now": {
     "updated": "Jun 2026",
     "items": [
-      { "label": "Working on", "value": "Multi-agent AI systems and \"Rules\" documentation frameworks at Web Negah — built to accelerate the whole team's delivery." },
-      { "label": "Building", "value": "Modular, reusable Laravel/Filament packages that cut the setup time on every new client project." },
-      { "label": "Exploring", "value": "AI-augmented workflows — folding LLM tooling and prompt engineering into the everyday shape of shipping software." },
-      { "label": "Creating", "value": "Live-coding videos and open-source packages for the developer community on YouTube." },
-      { "label": "Reading up on", "value": "System design and database performance — slow queries and heavy pages are bugs, not facts of life." },
-      { "label": "Open to", "value": "New and remote roles — full-stack or AI engineering." }
+      {
+        "label": "Working on",
+        "value": "Multi-agent AI systems and \"Rules\" documentation frameworks at Web Negah — built to accelerate the whole team's delivery."
+      },
+      {
+        "label": "Building",
+        "value": "Modular, reusable Laravel/Filament packages that cut the setup time on every new client project."
+      },
+      {
+        "label": "Exploring",
+        "value": "AI-augmented workflows — folding LLM tooling and prompt engineering into the everyday shape of shipping software."
+      },
+      {
+        "label": "Creating",
+        "value": "Live-coding videos and open-source packages for the developer community on YouTube."
+      },
+      {
+        "label": "Reading up on",
+        "value": "System design and database performance — slow queries and heavy pages are bugs, not facts of life."
+      },
+      {
+        "label": "Open to",
+        "value": "New and remote roles — full-stack or AI engineering."
+      }
     ]
   },
   "stack": [
     {
       "group": "Backend",
       "items": [
-        { "k": "Language", "v": "PHP" },
-        { "k": "Framework", "v": "Laravel" },
-        { "k": "Admin/UI", "v": "Filament & Livewire" },
-        { "k": "Database", "v": "PostgreSQL, MySQL, Redis" },
-        { "k": "Architecture", "v": "Multi-tenancy, modular (nwidart)" }
+        {"k": "Language", "v": "PHP"},
+        {"k": "Framework", "v": "Laravel"},
+        {"k": "Admin/UI", "v": "Filament & Livewire"},
+        {"k": "Database", "v": "PostgreSQL, MySQL, Redis"},
+        {"k": "Architecture", "v": "Multi-tenancy, modular (nwidart)"}
       ]
     },
     {
       "group": "Frontend",
       "items": [
-        { "k": "Frameworks", "v": "Vue / Nuxt.js, Next.js" },
-        { "k": "Interactivity", "v": "Alpine.js" },
-        { "k": "Bundling", "v": "Webpack" },
-        { "k": "Delivery", "v": "PWA" }
+        {"k": "Frameworks", "v": "Vue / Nuxt.js, Next.js"},
+        {"k": "Interactivity", "v": "Alpine.js"},
+        {"k": "Bundling", "v": "Webpack"},
+        {"k": "Delivery", "v": "PWA"}
       ]
     },
     {
       "group": "AI & automation",
       "items": [
-        { "k": "Systems", "v": "Multi-agent AI systems" },
-        { "k": "Practice", "v": "Prompt engineering, LLM tooling" },
-        { "k": "Workflow", "v": "AI-augmented documentation (\"Rules\")" },
-        { "k": "Focus", "v": "Automation that removes repetitive setup" }
+        {"k": "Systems", "v": "Multi-agent AI systems"},
+        {"k": "Practice", "v": "Prompt engineering, LLM tooling"},
+        {"k": "Workflow", "v": "AI-augmented documentation (\"Rules\")"},
+        {"k": "Focus", "v": "Automation that removes repetitive setup"}
       ]
     },
     {
       "group": "Delivery & tools",
       "items": [
-        { "k": "CI/CD", "v": "GitHub Actions" },
-        { "k": "Versioning", "v": "Git" },
-        { "k": "Process", "v": "Scrum, code review" },
-        { "k": "Design", "v": "System & database design" }
+        {"k": "CI/CD", "v": "GitLab CI/CD, GitHub Actions"},
+        {"k": "Containers", "v": "Docker"},
+        {"k": "Versioning", "v": "Git"},
+        {"k": "Process", "v": "Scrum, code review"},
+        {"k": "Design", "v": "System & database design"}
       ]
     }
   ],

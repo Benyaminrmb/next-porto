@@ -8,18 +8,17 @@ import {
   Mail,
 } from 'lucide-react'
 import type {PortfolioData} from '@/lib/data'
+import {ActivityGridBackground} from '@/components/ui/activity-grid-background'
 
 const copy = {
   en: {
     availability: 'Available for select opportunities',
-    role: 'Full-stack software & AI engineer',
+    role: 'Full-stack software engineer | AI engineering',
     title: (
       <>
         I build dependable software for <em>real-world problems.</em>
       </>
     ),
-    intro:
-      'I design and ship web products, internal platforms, and AI-powered workflows—with a focus on clarity, performance, and long-term maintainability.',
     work: 'Selected work',
     contact: 'Start a conversation',
     download: 'Download résumé',
@@ -58,17 +57,16 @@ const copy = {
     contactBody:
       'I’m open to remote engineering roles and a small number of focused collaborations.',
     email: 'Email me',
+    proof: ['Years of experience', 'Database queries', 'EF SET English'],
   },
   fa: {
     availability: 'آماده همکاری در فرصت‌های حرفه‌ای منتخب',
-    role: 'مهندس نرم‌افزار؛ توسعه فول‌استک و هوش مصنوعی',
+    role: 'مهندس نرم‌افزار فول‌استک | مهندسی هوش مصنوعی',
     title: (
       <>
         برای مسئله‌های واقعی، <em>راهکارهای نرم‌افزاری قابل اتکا</em> می‌سازم.
       </>
     ),
-    intro:
-      'محصولات وب، سامانه‌های سازمانی و فرایندهای مبتنی بر هوش مصنوعی را با تمرکز بر سادگی، کارایی و توسعه‌پذیری طراحی و پیاده‌سازی می‌کنم.',
     work: 'پروژه‌های منتخب',
     contact: 'شروع گفت‌وگو',
     download: 'دانلود رزومه',
@@ -106,6 +104,7 @@ const copy = {
     contactBody:
       'برای موقعیت‌های مهندسی دورکار و تعداد محدودی همکاری حرفه‌ای آماده گفت‌وگو هستم.',
     email: 'ارسال ایمیل',
+    proof: ['سال تجربه', 'کوئری پایگاه‌داده', 'نمره انگلیسی EF SET'],
   },
 }
 
@@ -122,6 +121,7 @@ export function PortfolioHome({
   return (
     <main className="simple-portfolio">
       <section className="sp-hero shell">
+        <ActivityGridBackground />
         <div className="sp-object sp-object-grid" aria-hidden="true" />
         <div className="sp-object sp-object-ring" aria-hidden="true" />
         <div className="sp-object sp-object-dot" aria-hidden="true" />
@@ -131,11 +131,13 @@ export function PortfolioHome({
             <span />
             {t.availability}
           </p>
-          <p className="sp-role">{t.role}</p>
+          <p className="sp-role">
+            {t.role} · {data.location}
+          </p>
         </div>
         <h1>{t.title}</h1>
         <div className="sp-hero-bottom">
-          <p>{t.intro}</p>
+          <p>{data.description}</p>
           <div className="sp-actions">
             <a className="sp-button sp-button-dark" href="#work">
               {t.work}
@@ -150,6 +152,18 @@ export function PortfolioHome({
               <Download size={17} />
             </a>
           </div>
+        </div>
+        <div
+          className="sp-proof"
+          aria-label={
+            locale === 'fa' ? 'آمار حرفه‌ای' : 'Professional highlights'
+          }>
+          {Object.values(data.stats).map((value, index) => (
+            <div key={t.proof[index]}>
+              <strong dir="ltr">{value}</strong>
+              <span>{t.proof[index]}</span>
+            </div>
+          ))}
         </div>
         <a className="sp-scroll" href="#work">
           <span>{t.scroll}</span>

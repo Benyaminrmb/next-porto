@@ -443,7 +443,9 @@ export function ExperienceEditorial({
             <div className="timeline-date">{x.period}</div>
             <div>
               <h3>{x.title}</h3>
-              <p className="company">{x.company}</p>
+              <p className="company">
+                {[x.company, x.location].filter(Boolean).join(' · ')}
+              </p>
               <ul>
                 {x.description.map((d) => (
                   <li key={d}>{d}</li>

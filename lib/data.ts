@@ -72,9 +72,8 @@ export interface PortfolioData {
   }[];
   stats: {
     yearsOfExperience: string;
-    projectsCompleted: string;
-    clientsSatisfied: string;
-    linesOfCode: string;
+    queryReduction: string;
+    englishScore: string;
   };
   teaching?: {
     title: string;
