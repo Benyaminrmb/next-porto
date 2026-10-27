@@ -41,7 +41,9 @@
         "PostgreSQL",
         "Redis",
         "Multi-Tenancy",
-        "RBAC"
+        "RBAC",
+        "Modular Architecture",
+        "Testing"
       ]
     },
     {
@@ -65,9 +67,7 @@
         "Docker",
         "Sentry",
         "GitLab CI/CD",
-        "Kubernetes",
-        "MinIO",
-        "Twilio"
+        "Kubernetes"
       ]
     }
   ],
@@ -287,10 +287,10 @@
       "location": "تهران، ایران",
       "period": "بهمن ۱۴۰۳ — اکنون",
       "description": [
-        "توسعه و نگهداری پلتفرم های CRM و اپلیکیشن های سلامت",
-        "پیاده سازی تحلیل تصویر غذا با مدل های AI",
-        "راه اندازی GitLab CI/CD Pipeline و Deploy به Production",
-        "مدیریت فایل های رسانه ای در MinIO و اتصال سرویس پیامک Twilio"
+        "توسعه و نگهداری پلتفرم‌های CRM و اپلیکیشن‌های سلامت؛ پیاده‌سازی تحلیل تصویر غذا با مدل‌های AI",
+        "راه‌اندازی GitLab CI Pipeline و Deploy به Production",
+        "استفاده از bucket اختصاصی در MinIO برای مدیریت فایل‌های رسانه‌ای",
+        "اتصال سرویس پیامک Twilio به پلتفرم"
       ],
       "technologies": [
         "Laravel",
@@ -308,12 +308,13 @@
       "location": "تهران، ایران",
       "period": "مهر ۱۳۹۸ — تیر ۱۴۰۴",
       "description": [
-        "هدایت تیم چهار نفره شامل دو توسعه دهنده Backend و دو توسعه دهنده Frontend",
-        "توسعه ایونتومنت با Laravel و Nuxt.js",
-        "کاهش کوئری های یک Route اصلی از حدود ۹۰۰ به ۳۰ با eager loading و بهینه سازی کوئری",
-        "توسعه پلتفرم رزرو Safar360 با معماری Multi-Tenant و اتصال رزرو اتوبوس به Altrabo و علی بابا B2B",
-        "مدیریت Race Condition رزرو با Redis و قفل دیتابیس",
-        "پردازش فایل های خروجی در مرورگر با Web Workers"
+        "هدایت تیم چهار نفره شامل دو توسعه‌دهنده Backend و دو توسعه‌دهنده Frontend؛ هماهنگی APIها پیش از شروع کار Frontend",
+        "توسعه اپلیکیشن رزرو دورهمی (Event) با Laravel و Nuxt.js",
+        "کاهش تعداد کوئری‌های یکی از Routeهای اصلی از حدود ۹۰۰ به ۳۰ با اصلاح کوئری‌ها و eager loading",
+        "پردازش فایل‌های خروجی (Export) در مرورگر با Web Workers",
+        "توسعه پلتفرم رزرو سفر Safar360 با معماری Multi-Tenant",
+        "اتصال بخش رزرو اتوبوس Safar360 به Altrabo و پلتفرم B2B شرکت علی‌بابا",
+        "مدیریت Race Condition در فرایند رزرو با قفل دیتابیس و Redis"
       ],
       "technologies": [
         "Laravel",

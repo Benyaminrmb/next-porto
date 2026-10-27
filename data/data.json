@@ -41,7 +41,9 @@
         "PostgreSQL",
         "Redis",
         "Multi-Tenancy",
-        "RBAC"
+        "RBAC",
+        "Modular Architecture",
+        "Testing"
       ]
     },
     {
@@ -65,9 +67,7 @@
         "Docker",
         "Sentry",
         "GitLab CI/CD",
-        "Kubernetes",
-        "MinIO",
-        "Twilio"
+        "Kubernetes"
       ]
     }
   ],
@@ -287,10 +287,10 @@
       "location": "Tehran, Iran",
       "period": "Feb 2025 — Present",
       "description": [
-        "Develop and maintain CRM platforms and health applications",
-        "Implement AI-based food-image analysis",
-        "Set up GitLab CI/CD pipelines and deploy to production",
-        "Manage media assets in MinIO and integrate Twilio messaging"
+        "Develop and maintain CRM platforms and health applications; implement food-image analysis with AI models",
+        "Set up a GitLab CI pipeline and deploy to production",
+        "Use dedicated MinIO buckets to manage media assets",
+        "Connect Twilio messaging to the platform"
       ],
       "technologies": [
         "Laravel",
@@ -308,12 +308,13 @@
       "location": "Tehran, Iran",
       "period": "Oct 2019 — Jul 2025",
       "description": [
-        "Led a four-person team of two backend and two frontend developers",
-        "Built Eventoment with Laravel and Nuxt.js",
-        "Reduced a critical route from about 900 queries to 30 with eager loading and query optimization",
-        "Developed Safar360’s multi-tenant reservation platform and connected bus booking to Altrabo and Ali Baba B2B",
-        "Handled reservation race conditions with Redis and database locks",
-        "Processed exports in the browser with Web Workers"
+        "Lead a four-person team of two backend and two frontend developers; coordinate APIs before frontend work begins",
+        "Develop the Eventoment reservation app with Laravel and Nuxt.js",
+        "Reduce a main route from about 900 queries to 30 through query optimization and eager loading",
+        "Process exported files in the browser with Web Workers",
+        "Develop Safar360 with a multi-tenant architecture",
+        "Connect Safar360 bus bookings to Altrabo and Ali Baba B2B",
+        "Handle reservation race conditions with database locks and Redis"
       ],
       "technologies": [
         "Laravel",
