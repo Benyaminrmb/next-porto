@@ -1,74 +1,73 @@
 {
   "name": "Benyamin Bolhassani",
-  "title": "Full-Stack Software Engineer | AI Engineering",
-  "description": "Full-stack software engineer with 6+ years of experience building web applications, CRM systems, and automation platforms. I combine Laravel and modern JavaScript with database optimization, modular architecture, and practical AI-agent workflows.",
+  "title": "PHP · Laravel Software Engineer",
+  "description": "Software engineer with 7 years of experience building web platforms and applications. I work across backend and frontend, with a focus on Laravel, CRM and reservation systems, health applications, and management dashboards.",
   "birthDate": "1379/4/9",
   "location": "Tehran, Iran",
   "maritalStatus": "Single",
-  "availability": "Open to new & remote roles",
+  "availability": "Open to new opportunities",
   "skills": [
-    "Multi-Agent Systems",
-    "Prompt Engineering",
-    "AI-Augmented Workflows",
-    "LLM Tooling",
-    "Automation",
     "PHP",
     "Laravel",
-    "Livewire",
+    "Node.js",
     "REST API",
     "PostgreSQL",
     "Redis",
     "Multi-Tenancy",
-    "Vue / Nuxt.js",
+    "JavaScript",
+    "React",
     "Next.js",
+    "Vue.js",
+    "Nuxt.js",
+    "Livewire",
+    "Alpine.js",
     "PWA",
-    "Webpack",
-    "System Design",
-    "Database Design",
-    "Modular Architecture",
-    "Docker",
-    "GitLab CI/CD",
-    "GitHub Actions",
+    "Web Workers",
     "Git",
-    "Scrum"
+    "Docker",
+    "Sentry",
+    "GitLab CI/CD",
+    "Kubernetes",
+    "Role-Based Access Control (RBAC)"
   ],
   "skillGroups": [
-    {
-      "group": "AI Engineering",
-      "items": [
-        "Multi-Agent Systems",
-        "Prompt Engineering",
-        "AI-Augmented Workflows",
-        "LLM Tooling",
-        "Automation"
-      ]
-    },
     {
       "group": "Backend",
       "items": [
         "PHP",
         "Laravel",
-        "Livewire",
+        "Node.js",
         "REST API",
         "PostgreSQL",
         "Redis",
-        "Multi-Tenancy"
+        "Multi-Tenancy",
+        "RBAC"
       ]
     },
     {
       "group": "Frontend",
-      "items": ["Vue / Nuxt.js", "Next.js", "PWA", "Webpack"]
+      "items": [
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Vue.js",
+        "Nuxt.js",
+        "Livewire",
+        "Alpine.js",
+        "PWA",
+        "Web Workers"
+      ]
     },
     {
-      "group": "Architecture & Delivery",
+      "group": "Tools & Deployment",
       "items": [
-        "System Design",
-        "Database Design",
-        "Modular Architecture",
+        "Git",
         "Docker",
+        "Sentry",
         "GitLab CI/CD",
-        "GitHub Actions",
-        "Git"
+        "Kubernetes",
+        "MinIO",
+        "Twilio"
       ]
     }
   ],
@@ -77,8 +76,8 @@
       "id": 1,
       "slug": "eventoment",
       "title": "Eventoment",
-      "description": "Social platform for local events. Built the GitHub Actions CI/CD pipeline and the Nuxt.js frontend.",
-      "longDescription": "Eventoment helps people find and organize local events. I led the frontend work in Nuxt.js, set up deployment with GitHub Actions, and worked through a serious query problem: one important flow went from roughly 900 database queries to about 30.",
+      "description": "Event booking platform for private hospitals, built with Laravel and Nuxt.js.",
+      "longDescription": "Eventoment is an event reservation platform for private hospitals. I worked on the Laravel backend and Nuxt.js frontend, added Google SSO authentication and PWA support, and improved media transfer with streaming uploads and downloads for the Android app.",
       "image": "/projects/eventoment/Screenshot 2026-01-24 at 11-41-16 ایونتومنت شبکه اجتماعی دورهمی ها.png",
       "screenshots": [
         "/projects/eventoment/Screenshot 2026-01-24 at 11-41-16 ایونتومنت شبکه اجتماعی دورهمی ها.png",
@@ -86,51 +85,58 @@
         "/projects/eventoment/Screenshot 2026-01-24 at 11-43-18 ایونتومنت طبیعت بکر#.png"
       ],
       "link": "https://eventoment.com",
-      "tags": ["Laravel", "Nuxt.js", "REST API", "Firebase"],
+      "tags": [
+        "Laravel",
+        "Nuxt.js",
+        "PWA",
+        "Google SSO"
+      ],
       "category": "web",
       "role": "Lead",
       "year": "2021",
       "company": "Iran Technology",
       "features": [
-        "GitHub Actions CI/CD pipeline",
-        "Nuxt.js frontend architecture",
-        "Cut a critical flow from ~900 queries to ~30",
-        "SEO raised to an A score via Webpack bundling",
-        "Real-time Firebase notifications",
-        "PWA support for mobile experience"
+        "Event reservations for private hospitals",
+        "Google SSO authentication",
+        "PWA support",
+        "Streaming media uploads and downloads for Android"
       ]
     },
     {
       "id": 2,
       "slug": "safar360",
       "title": "Safar 360",
-      "description": "Travel-booking platform. Built the multi-tenant ticketing core for selling agencies — air, rail & bus.",
-      "longDescription": "Safar 360 sells flights, train and bus tickets, hotels, and tours. My main job was the multi-tenant ticketing core used by selling agencies, including connections to travel providers and payment gateways.",
+      "description": "Travel-booking platform with a multi-tenant reservation core for agencies.",
+      "longDescription": "Safar360 is a travel reservation platform. I developed its multi-tenant architecture and connected the bus-booking service to Altrabo and Ali Baba B2B. I also handled reservation race conditions using Redis and database locks.",
       "image": "/projects/safar360/Screenshot 2026-01-24 at 11-43-38 سفر360.png",
       "screenshots": [
         "/projects/safar360/Screenshot 2026-01-24 at 11-43-38 سفر360.png",
         "/projects/safar360/Screenshot 2026-01-24 at 11-44-17 تور لحظه آخری کیش سفر360.png"
       ],
       "link": "https://safar360.com",
-      "tags": ["Laravel", "Vue.js", "Payment Gateway"],
+      "tags": [
+        "Laravel",
+        "Nuxt.js",
+        "Multi-Tenant",
+        "Redis"
+      ],
       "category": "web",
       "role": "",
       "year": "2018",
       "company": "Iran Technology",
       "features": [
-        "Multi-tenant ticketing core for agencies",
-        "Flight, train, and bus ticket booking",
-        "Hotel and tour package reservations",
-        "Payment gateway integrations",
-        "SEO optimized for travel searches"
+        "Multi-tenant reservation architecture",
+        "Bus booking integration with Altrabo",
+        "B2B integration with Ali Baba",
+        "Race-condition handling with Redis and database locks"
       ]
     },
     {
       "id": 3,
       "slug": "steel-rizan",
       "title": "Steel Rizan",
-      "description": "Industrial-operations platform with a custom-formula engine driving its pricing system.",
-      "longDescription": "Steel Rizan is an operations system for a steel-casting business. I built it with Laravel and Filament. The most interesting part is its formula engine, which lets the team manage the calculations behind pricing without changing the code.",
+      "description": "Operations platform with inventory management, CRM, ticketing, and custom-formula pricing.",
+      "longDescription": "Steel Rizan includes inventory and operations management, CRM and ticketing, and price calculation based on custom formulas. The frontend uses React.",
       "image": "/projects/faraz/Screenshot 2026-01-24 at 11-37-31 فراز استیل ریزان.png",
       "screenshots": [
         "/projects/faraz/Screenshot 2026-01-24 at 11-37-31 فراز استیل ریزان.png",
@@ -139,84 +145,95 @@
         "/projects/faraz/Screenshot 2026-01-24 at 11-39-58 مشاهده محصول - فراز استیل ریزان.png"
       ],
       "link": "https://faraz.steelrizan.com",
-      "tags": ["Laravel", "Filament", "Automation"],
+      "tags": [
+        "Laravel",
+        "React",
+        "CRM",
+        "Ticketing"
+      ],
       "category": "web",
       "role": "",
       "year": "2025",
       "company": "Web Negah",
       "features": [
-        "Custom-formula engine driving the pricing system",
-        "Production management dashboard",
-        "Inventory tracking system",
-        "Ticketing and support system",
-        "Custom reporting modules"
+        "Inventory and operations management",
+        "CRM and ticketing",
+        "Formula-based price calculation",
+        "React frontend"
       ]
     },
     {
       "id": 4,
       "slug": "atiehomid",
-      "title": "AtiehOmid",
-      "description": "Dashboard for bank users and their investigators. Laravel · Livewire · Filament.",
-      "longDescription": "AtiehOmid gives bank users and investigators one place to review and follow their cases. It is built with Laravel, Livewire, and Filament, with an emphasis on clear data and quick day-to-day workflows.",
+      "title": "Catalyst / Azar",
+      "description": "Automotive catalyst pricing platform with customizable calculation formulas.",
+      "longDescription": "Catalyst calculates automotive catalyst prices with custom, dynamic formulas. Its management panel is built with Laravel, Filament, Livewire and Alpine.js.",
       "image": "/projects/Azar/Screenshot 2026-01-24 at 11-52-13 داشبورد - Azar.png",
       "screenshots": [],
-      "link": "https://spr.atiehomid.com",
-      "tags": ["Laravel", "Livewire", "Filament"],
-      "category": "web",
-      "role": "",
-      "year": "",
-      "company": "Web Negah",
-      "features": [
-        "Bank user and investigator dashboards",
-        "Laravel · Livewire · Filament stack",
-        "Structured financial data review workflows"
-      ]
-    },
-    {
-      "id": 5,
-      "slug": "azar-pmr",
-      "title": "Azar PMR",
-      "description": "Operations platform with per-cell custom formulas built in Alpine.js on Filament & Laravel.",
-      "longDescription": "Azar PMR needed spreadsheet-like calculations inside a structured admin panel. I built custom formulas for individual cells with Alpine.js on top of Filament and Laravel, so operators can change calculations without giving up the safeguards of the application.",
-      "image": "/projects/Azar/Screenshot 2026-01-24 at 11-48-54 کاتالیست_ها - Azar.png",
-      "screenshots": [
-        "/projects/Azar/Screenshot 2026-01-24 at 11-52-13 داشبورد - Azar.png",
-        "/projects/Azar/Screenshot 2026-01-24 at 11-48-54 کاتالیست_ها - Azar.png",
-        "/projects/Azar/Screenshot 2026-01-24 at 11-49-41 ویرایش فیلد کاتالیست - Azar.png"
-      ],
       "link": "https://app.azarpmr.ir",
-      "tags": ["Laravel", "Filament", "Alpine.js"],
+      "tags": [
+        "Laravel",
+        "Filament",
+        "Livewire",
+        "Alpine.js"
+      ],
       "category": "web",
       "role": "",
-      "year": "",
+      "year": "2025–present",
       "company": "Web Negah",
       "features": [
-        "Per-cell custom formula engine in Alpine.js",
-        "Dynamic calculation system",
-        "Precious metal price tracking",
-        "Car brand and model catalog",
-        "PDF report generation",
-        "Jalali calendar support"
+        "Custom, dynamic price formulas",
+        "Management panel built with Laravel, Filament, Livewire and Alpine.js"
       ]
     },
     {
       "id": 6,
       "slug": "onyar",
-      "title": "OnYar",
-      "description": "Health & disease content platform on a nwidart modular architecture with per-module testing.",
-      "longDescription": "OnYar is a health and disease content platform. Its Laravel codebase is split into nwidart modules, and every module has its own tests. That keeps new work contained and makes regressions easier to catch.",
-      "image": "/projects/eventoment/Screenshot 2026-01-24 at 11-41-16 ایونتومنت شبکه اجتماعی دورهمی ها.png",
+      "title": "D2Type",
+      "description": "Diabetes care app for health data, food analysis and daily goals.",
+      "longDescription": "D2Type is a diabetes care app built with Laravel. It connects with Health Connect on Android and HealthKit on Apple devices, analyzes health data and food portions, creates daily and weekly goals approved by a doctor, and reports errors through Sentry.",
+      "image": "",
       "screenshots": [],
-      "link": null,
-      "tags": ["Laravel", "Modular Architecture", "Testing"],
+      "link": "https://d2type.com",
+      "tags": [
+        "Laravel",
+        "Health Connect",
+        "HealthKit",
+        "Sentry"
+      ],
       "category": "web",
       "role": "",
       "year": "",
-      "company": "Web Negah",
+      "company": "Iran Technology",
       "features": [
-        "nwidart modular architecture",
-        "Per-module test coverage",
-        "Health & disease content management"
+        "Health Connect and HealthKit integrations",
+        "Health-data and food-portion analysis",
+        "Doctor-approved daily and weekly goals",
+        "Sentry error monitoring"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "sales-coaching",
+      "title": "Sales Coaching",
+      "description": "Online course sales platform.",
+      "longDescription": "A sales-course platform with a Laravel backend and Next.js frontend, deployed on Kubernetes.",
+      "image": "",
+      "screenshots": [],
+      "link": "https://salescoaching.school",
+      "tags": [
+        "Laravel",
+        "Next.js",
+        "Kubernetes"
+      ],
+      "category": "web",
+      "role": "",
+      "year": "",
+      "company": "",
+      "features": [
+        "Laravel backend",
+        "Next.js frontend",
+        "Kubernetes deployment"
       ]
     }
   ],
@@ -265,22 +282,23 @@
   "workExperience": [
     {
       "id": 1,
-      "title": "Full-Stack Developer",
+      "title": "Software Engineer",
       "company": "Web Negah",
       "location": "Tehran, Iran",
       "period": "Feb 2025 — Present",
       "description": [
-        "Build web applications, CRM systems, and progressive web apps across client projects",
-        "Develop multi-agent AI systems and shared documentation frameworks to support team delivery",
-        "Create reusable, modular packages to streamline new project development"
+        "Develop and maintain CRM platforms and health applications",
+        "Implement AI-based food-image analysis",
+        "Set up GitLab CI/CD pipelines and deploy to production",
+        "Manage media assets in MinIO and integrate Twilio messaging"
       ],
       "technologies": [
         "Laravel",
-        "Filament",
-        "Livewire",
         "PHP",
-        "Multi-Agent Systems",
-        "Automation"
+        "GitLab CI/CD",
+        "MinIO",
+        "Twilio",
+        "Sentry"
       ]
     },
     {
@@ -290,19 +308,19 @@
       "location": "Tehran, Iran",
       "period": "Oct 2019 — Jul 2025",
       "description": [
-        "Led development of Eventoment, the company's flagship event-management social platform",
-        "Reduced a critical flow from approximately 900 database queries to 30 through eager loading and query optimization",
-        "Built the Nuxt.js frontend and GitHub Actions CI/CD pipeline for Eventoment",
-        "Optimized frontend bundles, server infrastructure, and databases to improve performance and scalability"
+        "Led a four-person team of two backend and two frontend developers",
+        "Built Eventoment with Laravel and Nuxt.js",
+        "Reduced a critical route from about 900 queries to 30 with eager loading and query optimization",
+        "Developed Safar360’s multi-tenant reservation platform and connected bus booking to Altrabo and Ali Baba B2B",
+        "Handled reservation race conditions with Redis and database locks",
+        "Processed exports in the browser with Web Workers"
       ],
       "technologies": [
         "Laravel",
         "Nuxt.js",
-        "REST API",
-        "Firebase",
-        "Vue.js",
-        "MySQL",
-        "Redis"
+        "Redis",
+        "Web Workers",
+        "MySQL"
       ]
     }
   ],
@@ -318,7 +336,7 @@
     "military": "Exempt"
   },
   "stats": {
-    "yearsOfExperience": "6+",
+    "yearsOfExperience": "7",
     "queryReduction": "~900 → ~30",
     "englishScore": "87/100"
   },
@@ -355,39 +373,93 @@
     {
       "group": "Backend",
       "items": [
-        {"k": "Language", "v": "PHP"},
-        {"k": "Framework", "v": "Laravel"},
-        {"k": "Admin/UI", "v": "Filament & Livewire"},
-        {"k": "Database", "v": "PostgreSQL, MySQL, Redis"},
-        {"k": "Architecture", "v": "Multi-tenancy, modular (nwidart)"}
+        {
+          "k": "Language",
+          "v": "PHP"
+        },
+        {
+          "k": "Framework",
+          "v": "Laravel"
+        },
+        {
+          "k": "Admin/UI",
+          "v": "Filament & Livewire"
+        },
+        {
+          "k": "Database",
+          "v": "PostgreSQL, MySQL, Redis"
+        },
+        {
+          "k": "Architecture",
+          "v": "Multi-tenancy, modular (nwidart)"
+        }
       ]
     },
     {
       "group": "Frontend",
       "items": [
-        {"k": "Frameworks", "v": "Vue / Nuxt.js, Next.js"},
-        {"k": "Interactivity", "v": "Alpine.js"},
-        {"k": "Bundling", "v": "Webpack"},
-        {"k": "Delivery", "v": "PWA"}
+        {
+          "k": "Frameworks",
+          "v": "Vue / Nuxt.js, Next.js"
+        },
+        {
+          "k": "Interactivity",
+          "v": "Alpine.js"
+        },
+        {
+          "k": "Bundling",
+          "v": "Webpack"
+        },
+        {
+          "k": "Delivery",
+          "v": "PWA"
+        }
       ]
     },
     {
       "group": "AI & automation",
       "items": [
-        {"k": "Systems", "v": "Multi-agent AI systems"},
-        {"k": "Practice", "v": "Prompt engineering, LLM tooling"},
-        {"k": "Workflow", "v": "AI-augmented documentation (\"Rules\")"},
-        {"k": "Focus", "v": "Automation that removes repetitive setup"}
+        {
+          "k": "Systems",
+          "v": "Multi-agent AI systems"
+        },
+        {
+          "k": "Practice",
+          "v": "Prompt engineering, LLM tooling"
+        },
+        {
+          "k": "Workflow",
+          "v": "AI-augmented documentation (\"Rules\")"
+        },
+        {
+          "k": "Focus",
+          "v": "Automation that removes repetitive setup"
+        }
       ]
     },
     {
       "group": "Delivery & tools",
       "items": [
-        {"k": "CI/CD", "v": "GitLab CI/CD, GitHub Actions"},
-        {"k": "Containers", "v": "Docker"},
-        {"k": "Versioning", "v": "Git"},
-        {"k": "Process", "v": "Scrum, code review"},
-        {"k": "Design", "v": "System & database design"}
+        {
+          "k": "CI/CD",
+          "v": "GitLab CI/CD, GitHub Actions"
+        },
+        {
+          "k": "Containers",
+          "v": "Docker"
+        },
+        {
+          "k": "Versioning",
+          "v": "Git"
+        },
+        {
+          "k": "Process",
+          "v": "Scrum, code review"
+        },
+        {
+          "k": "Design",
+          "v": "System & database design"
+        }
       ]
     }
   ],

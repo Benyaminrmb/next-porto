@@ -1,298 +1,87 @@
 import Link from 'next/link'
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Download,
-  Github,
-  Linkedin,
-  Mail,
-} from 'lucide-react'
+import {ArrowDown, ArrowUpRight, Download, Mail} from 'lucide-react'
 import type {PortfolioData} from '@/lib/data'
-import {ActivityGridBackground} from '@/components/ui/activity-grid-background'
 
 const copy = {
   en: {
-    availability: 'Available for select opportunities',
-    role: 'Full-stack software engineer | AI engineering',
-    title: (
-      <>
-        I build dependable software for <em>real-world problems.</em>
-      </>
-    ),
-    work: 'Selected work',
-    contact: 'Start a conversation',
-    download: 'Download résumé',
-    scroll: 'Explore',
-    projectsLabel: 'Selected work',
-    projectsTitle: 'A small selection of systems I’ve helped build.',
-    projectsIntro:
-      'Complex products made simpler, faster, and easier to operate.',
-    projectLink: 'Read case study',
-    allProjects: 'All projects',
-    expertiseLabel: 'What I do',
-    expertiseTitle: 'One engineer, from product thinking to production.',
-    expertise: [
-      {
-        title: 'AI systems & automation',
-        body: 'Multi-agent systems, LLM tooling, and practical automation that removes repetitive work from a team’s day.',
-      },
-      {
-        title: 'Backend & architecture',
-        body: 'Clear APIs, modular systems, multi-tenancy, and databases designed to remain understandable as products grow.',
-      },
-      {
-        title: 'Product engineering',
-        body: 'End-to-end product delivery with Laravel, Next.js, and Vue—from the first technical decision to a stable release.',
-      },
-    ],
-    experienceLabel: 'Experience',
-    experienceTitle: 'Building and improving web products since 2019.',
-    resume: 'View full résumé',
-    aboutLabel: 'Approach',
-    aboutTitle: 'Simple is the result of understanding the problem well.',
-    aboutBody:
-      'I work close to the people using the product, ask direct questions, and reduce complexity before adding code. The goal is not just to ship—it is to leave behind a system the next engineer can confidently work with.',
-    contactLabel: 'Contact',
-    contactTitle: 'Have a difficult problem worth solving?',
-    contactBody:
-      'I’m open to remote engineering roles and a small number of focused collaborations.',
-    email: 'Email me',
-    proof: ['Years of experience', 'Database queries', 'EF SET English'],
+    available: 'Open to new opportunities',
+    intro: 'PHP · LARAVEL · FULL-STACK ENGINEERING',
+    headline: <>I build software that makes <span>complex work feel simple.</span></>,
+    work: 'Explore selected work', contact: 'Get in touch', download: 'Download résumé',
+    selected: 'Selected work', workTitle: 'Products built around real work.',
+    workBody: 'Reservation systems, health applications, and tools for teams.',
+    experience: 'Experience', experienceTitle: 'Seven years, working across the stack.',
+    skills: 'The stack', skillsTitle: 'Tools I use to get useful software into production.',
+    contactTitle: 'Have a product to build or a hard problem to solve?',
+    contactBody: 'I’m open to software engineering roles and focused collaborations.',
+    email: 'Send me an email', resume: 'Full résumé',
+    proof: ['years building software', 'queries reduced on a critical route', 'teams led'],
+    details: 'View project',
   },
   fa: {
-    availability: 'آماده همکاری در فرصت‌های حرفه‌ای منتخب',
-    role: 'مهندس نرم‌افزار فول‌استک | مهندسی هوش مصنوعی',
-    title: (
-      <>
-        برای مسئله‌های واقعی، <em>راهکارهای نرم‌افزاری قابل اتکا</em> می‌سازم.
-      </>
-    ),
-    work: 'پروژه‌های منتخب',
-    contact: 'شروع گفت‌وگو',
-    download: 'دانلود رزومه',
-    scroll: 'بیشتر ببینید',
-    projectsLabel: 'پروژه‌های منتخب',
-    projectsTitle: 'منتخبی از محصولاتی که در طراحی و توسعه آن‌ها نقش داشته‌ام.',
-    projectsIntro: 'تبدیل نیازهای پیچیده به محصولاتی سریع، روشن و قابل مدیریت.',
-    projectLink: 'جزئیات پروژه',
-    allProjects: 'همه پروژه‌ها',
-    expertiseLabel: 'چه کار می‌کنم',
-    expertiseTitle: 'از شناخت مسئله تا محصولی که در دنیای واقعی کار می‌کند.',
-    expertise: [
-      {
-        title: 'سیستم‌های هوش مصنوعی و اتوماسیون',
-        body: 'طراحی سیستم‌های چندعاملی، ابزارهای مبتنی بر مدل‌های زبانی و اتوماسیون‌هایی که کارهای تکراری تیم را کاهش می‌دهند.',
-      },
-      {
-        title: 'بک‌اند و معماری',
-        body: 'طراحی API، معماری ماژولار، سامانه‌های چندمستاجری و پایگاه‌داده‌هایی که با رشد محصول همچنان قابل نگهداری می‌مانند.',
-      },
-      {
-        title: 'مهندسی محصول',
-        body: 'توسعه یکپارچه محصول با Laravel، Next.js و Vue؛ از تصمیم‌های فنی اولیه تا انتشار پایدار در محیط عملیاتی.',
-      },
-    ],
-    experienceLabel: 'تجربه',
-    experienceTitle: 'بیش از شش سال تجربه در ساخت و بهبود محصولات نرم‌افزاری.',
-    resume: 'مشاهده رزومه کامل',
-    aboutLabel: 'رویکرد',
-    aboutTitle: 'یک محصول ساده، از درک عمیق مسئله شروع می‌شود.',
-    aboutBody:
-      'در کنار کاربران و تیم محصول کار می‌کنم، سؤال‌های دقیق می‌پرسم و پیش از نوشتن کد، پیچیدگی‌های غیرضروری را کنار می‌گذارم. هدفم فقط تحویل پروژه نیست؛ محصول باید برای تیم بعدی هم روشن، قابل توسعه و قابل اعتماد بماند.',
-    contactLabel: 'تماس',
-    contactTitle: 'برای حل یک مسئله جدی آماده‌اید؟',
-    contactBody:
-      'برای موقعیت‌های مهندسی دورکار و تعداد محدودی همکاری حرفه‌ای آماده گفت‌وگو هستم.',
-    email: 'ارسال ایمیل',
-    proof: ['سال تجربه', 'کوئری پایگاه‌داده', 'نمره انگلیسی EF SET'],
+    available: 'آماده همکاری در موقعیت‌های جدید',
+    intro: 'PHP · LARAVEL · FULL-STACK ENGINEERING',
+    headline: <>نرم‌افزاری می‌سازم که <span>کارهای پیچیده را ساده می‌کند.</span></>,
+    work: 'دیدن پروژه‌های منتخب', contact: 'در تماس باشیم', download: 'دانلود رزومه',
+    selected: 'پروژه‌های منتخب', workTitle: 'محصولاتی برای حل مسئله‌های واقعی.',
+    workBody: 'پلتفرم‌های رزرو، اپلیکیشن‌های سلامت و ابزارهای تیمی.',
+    experience: 'تجربه کاری', experienceTitle: 'هفت سال کار در بخش‌های مختلف توسعه نرم‌افزار.',
+    skills: 'تکنولوژی‌ها', skillsTitle: 'ابزارهایی که با آن‌ها نرم‌افزار را به Production می‌رسانم.',
+    contactTitle: 'پروژه‌ای برای ساختن یا مسئله‌ای جدی برای حل کردن دارید؟',
+    contactBody: 'برای موقعیت‌های مهندسی نرم‌افزار و همکاری‌های محدود آماده گفت‌وگو هستم.',
+    email: 'ارسال ایمیل', resume: 'رزومه کامل',
+    proof: ['سال تجربه', 'کوئری در یک Route مهم', 'توسعه‌دهنده در تیم'],
+    details: 'مشاهده پروژه',
   },
 }
 
-export function PortfolioHome({
-  data,
-  locale,
-}: {
-  data: PortfolioData
-  locale: string
-}) {
-  const t = copy[locale === 'fa' ? 'fa' : 'en']
-  const projects = data.projects.slice(0, 3)
-
+export function PortfolioHome({data, locale}: {data: PortfolioData; locale: string}) {
+  const fa = locale === 'fa'
+  const t = copy[fa ? 'fa' : 'en']
+  const projects = data.projects.slice(0, 7)
   return (
-    <main className="simple-portfolio">
-      <section className="sp-hero shell">
-        <ActivityGridBackground />
-        <div className="sp-object sp-object-grid" aria-hidden="true" />
-        <div className="sp-object sp-object-ring" aria-hidden="true" />
-        <div className="sp-object sp-object-dot" aria-hidden="true" />
-
-        <div className="sp-hero-top">
-          <p className="sp-availability">
-            <span />
-            {t.availability}
-          </p>
-          <p className="sp-role">
-            {t.role} · {data.location}
-          </p>
-        </div>
-        <h1>{t.title}</h1>
-        <div className="sp-hero-bottom">
-          <p>{data.description}</p>
-          <div className="sp-actions">
-            <a className="sp-button sp-button-dark" href="#work">
-              {t.work}
-              <ArrowDownRight size={18} />
-            </a>
-            <a className="sp-button" href={`mailto:${data.contact.email}`}>
-              {t.contact}
-              <Mail size={17} />
-            </a>
-            <a className="sp-button" href="/resume.pdf" download>
-              {t.download}
-              <Download size={17} />
-            </a>
+    <main className="folio">
+      <section className="folio-hero shell">
+        <div className="folio-hero-orbit" aria-hidden="true"><span>BB</span></div>
+        <div className="folio-hero-copy">
+          <p className="folio-status"><i />{t.available}</p>
+          <p className="folio-overline">{t.intro}</p>
+          <h1>{t.headline}</h1>
+          <p className="folio-lede">{data.description}</p>
+          <div className="folio-actions">
+            <a className="folio-button folio-button-primary" href="#work">{t.work}<ArrowDown size={16}/></a>
+            <a className="folio-button" href={`mailto:${data.contact.email}`}>{t.contact}<Mail size={16}/></a>
+            <a className="folio-download" href="/resume.pdf" download><Download size={15}/>{t.download}</a>
           </div>
         </div>
-        <div
-          className="sp-proof"
-          aria-label={
-            locale === 'fa' ? 'آمار حرفه‌ای' : 'Professional highlights'
-          }>
-          {Object.values(data.stats).map((value, index) => (
-            <div key={t.proof[index]}>
-              <strong dir="ltr">{value}</strong>
-              <span>{t.proof[index]}</span>
+        <div className="folio-proof">
+          {[data.stats.yearsOfExperience, data.stats.queryReduction, '4'].map((value, i) => <div key={i}><strong dir="ltr">{value}</strong><span>{t.proof[i]}</span></div>)}
+        </div>
+        <span className="folio-hero-index">01 / 04</span>
+      </section>
+
+      <section className="folio-section shell" id="work">
+        <header className="folio-heading"><div><p className="folio-label">01 — {t.selected}</p><h2>{t.workTitle}</h2></div><p>{t.workBody}</p></header>
+        <div className="folio-project-grid">
+          {projects.map((project, i) => <article className={`folio-project folio-project-${i + 1}`} key={project.slug}>
+            <div className="folio-project-top"><span>{String(i + 1).padStart(2, '0')}</span><span>{[project.company, project.year].filter(Boolean).join(' · ')}</span></div>
+            <div className="folio-project-content"><div><p className="folio-project-type">{project.tags?.slice(0, 2).join(' / ')}</p><h3>{project.title}</h3><p className="folio-project-description">{project.description}</p></div>
+              <Link href={`/${locale}/projects/${project.slug}`} className="folio-project-link"><span>{t.details}</span><ArrowUpRight size={18}/></Link>
             </div>
-          ))}
-        </div>
-        <a className="sp-scroll" href="#work">
-          <span>{t.scroll}</span>
-          <span className="sp-scroll-line" />
-        </a>
-      </section>
-
-      <section className="sp-section shell" id="work">
-        <header className="sp-section-heading">
-          <div>
-            <p className="sp-kicker">01 — {t.projectsLabel}</p>
-            <h2>{t.projectsTitle}</h2>
-          </div>
-          <p>{t.projectsIntro}</p>
-        </header>
-        <div className="sp-projects">
-          {projects.map((project, index) => (
-            <article className="sp-project" key={project.slug}>
-              <div className="sp-project-number">
-                {String(index + 1).padStart(2, '0')}
-              </div>
-              <div className="sp-project-main">
-                <div className="sp-project-meta">
-                  {[project.company, project.year].filter(Boolean).join(' · ')}
-                </div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="sp-tags">
-                  {project.tags?.slice(0, 4).map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </div>
-              <Link
-                className="sp-project-link"
-                href={`/${locale}/projects/${project.slug}`}
-                aria-label={`${t.projectLink}: ${project.title}`}>
-                <span>{t.projectLink}</span>
-                <ArrowUpRight size={20} />
-              </Link>
-            </article>
-          ))}
-        </div>
-        <Link className="sp-text-link" href={`/${locale}/projects`}>
-          {t.allProjects}
-          <ArrowUpRight size={17} />
-        </Link>
-      </section>
-
-      <section className="sp-section sp-expertise" id="expertise">
-        <div className="shell">
-          <header className="sp-section-heading sp-section-heading-light">
-            <div>
-              <p className="sp-kicker">02 — {t.expertiseLabel}</p>
-              <h2>{t.expertiseTitle}</h2>
-            </div>
-          </header>
-          <div className="sp-expertise-grid">
-            {t.expertise.map((item, index) => (
-              <article key={item.title}>
-                <span>0{index + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
+            <div className="folio-project-tags">{project.tags?.slice(0, 4).map(tag=><span key={tag}>{tag}</span>)}</div>
+            <div className="folio-project-art" aria-hidden="true"><b>{project.title.slice(0, 1)}</b><i/><i/><i/></div>
+          </article>)}
         </div>
       </section>
 
-      <section className="sp-section shell" id="experience">
-        <header className="sp-section-heading">
-          <div>
-            <p className="sp-kicker">03 — {t.experienceLabel}</p>
-            <h2>{t.experienceTitle}</h2>
-          </div>
-          <div className="sp-resume-actions">
-            <Link className="sp-text-link" href={`/${locale}/resume`}>
-              {t.resume}
-              <ArrowUpRight size={17} />
-            </Link>
-            <a className="sp-button" href="/resume.pdf" download>
-              {t.download}
-              <Download size={17} />
-            </a>
-          </div>
-        </header>
-        <div className="sp-timeline">
-          {data.workExperience.map((job) => (
-            <article key={job.id}>
-              <time>{job.period}</time>
-              <div>
-                <h3>{job.title}</h3>
-                <p>{job.company}</p>
-              </div>
-              <p>{job.description[0]}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <section className="folio-experience" id="experience"><div className="shell">
+        <header className="folio-heading"><div><p className="folio-label">02 — {t.experience}</p><h2>{t.experienceTitle}</h2></div><Link href={`/${locale}/resume`} className="folio-inline-link">{t.resume}<ArrowUpRight size={16}/></Link></header>
+        <div className="folio-timeline">{data.workExperience.map((job, i)=><article key={job.id}><span className="folio-job-number">0{i+1}</span><time>{job.period}</time><div><h3>{job.title}</h3><p className="folio-company">{job.company}</p><ul>{job.description.slice(0, 4).map(item=><li key={item}>{item}</li>)}</ul><div className="folio-project-tags">{job.technologies?.slice(0, 6).map(tech=><span key={tech}>{tech}</span>)}</div></div></article>)}</div>
+      </div></section>
 
-      <section className="sp-section shell sp-approach" id="about">
-        <p className="sp-kicker">04 — {t.aboutLabel}</p>
-        <div>
-          <h2>{t.aboutTitle}</h2>
-          <p>{t.aboutBody}</p>
-        </div>
-      </section>
+      <section className="folio-section shell folio-stack"><header className="folio-heading"><div><p className="folio-label">03 — {t.skills}</p><h2>{t.skillsTitle}</h2></div></header><div className="folio-stack-grid">{data.skillGroups?.map(group=><article key={group.group}><h3>{group.group}</h3><div>{group.items.map(item=><span key={item}>{item}</span>)}</div></article>)}</div></section>
 
-      <section className="sp-contact shell" id="contact">
-        <div>
-          <p className="sp-kicker">05 — {t.contactLabel}</p>
-          <h2>{t.contactTitle}</h2>
-          <p>{t.contactBody}</p>
-        </div>
-        <div className="sp-contact-actions">
-          <a
-            className="sp-button sp-button-light"
-            href={`mailto:${data.contact.email}`}>
-            {t.email}
-            <Mail size={17} />
-          </a>
-          <a href={data.contact.linkedin} aria-label="LinkedIn">
-            <Linkedin size={20} />
-          </a>
-          <a href={data.contact.github} aria-label="GitHub">
-            <Github size={20} />
-          </a>
-        </div>
-      </section>
+      <section className="folio-contact shell" id="contact"><p className="folio-label">04 — CONTACT</p><h2>{t.contactTitle}</h2><p>{t.contactBody}</p><a className="folio-button folio-button-light" href={`mailto:${data.contact.email}`}>{t.email}<ArrowUpRight size={17}/></a><div className="folio-socials">{data.contact.github && <a href={data.contact.github} target="_blank" rel="noreferrer">GitHub</a>}{data.contact.linkedin && <a href={data.contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>}{data.contact.youtube && <a href={data.contact.youtube} target="_blank" rel="noreferrer">YouTube</a>}</div></section>
     </main>
   )
 }
